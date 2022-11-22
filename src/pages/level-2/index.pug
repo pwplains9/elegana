@@ -1,0 +1,10 @@
+extends @pages/index
+
+append globals
+    - pageName = 'LevelTwo'
+    - title = data[pageName]?.meta?.title ?? data.general.title
+    - description = data[pageName]?.meta?.description ?? data.general.description
+    - image = data[pageName]?.meta?.image ?? data.general.image
+
+append vars
+    - meta.keywords = data[pageName]?.meta?.keywords ?? data.general.keywords

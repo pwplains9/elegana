@@ -1,0 +1,114 @@
+.footer {
+    padding-top: vc(64);
+    padding-bottom: vc(67);
+    background: $color-theme;
+
+    &-top {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    &-logo {
+        display: block;
+        width: vc(181);
+        height: vc(68.87);
+    }
+
+    &-social {
+        display: flex;
+        align-items: center;
+    }
+
+    &-right {
+        display: flex;
+        align-items: center;
+    }
+
+    &-link {
+        margin-right: vc(32.8);
+        transition: all 0.5s linear;
+
+        &--vk {
+            margin-right: vc(32);
+            width: vc(37.2);
+            height: vc(37.2);
+        }
+
+        &--fb {
+            width: vc(38);
+            height: vc(38);
+        }
+    }
+
+    &-number {
+        border: 2px solid $color-brown;
+        border-radius: 5px;
+        padding: vc(13) vc(18);
+        font-weight: 400;
+        font-size: vc(16);
+        line-height: vc(16);
+        text-align: center;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: $color-white;
+        background: $color-theme;
+        transition: all 0.5s linear;
+
+        @include desktop {
+            &:hover {
+                background: $color-brown;
+            }
+        }
+    }
+
+    &-links {
+        margin-top: vc(63);
+        margin-bottom: vc(24);
+        width: vc(1066);
+
+        ul {
+            display: flex;
+            flex-wrap: wrap;
+
+        }
+
+        li {
+            margin-bottom: vc(26);
+            width: 25%;
+        }
+
+        a {
+            font-weight: 400;
+            font-size: vc(16);
+            line-height: vc(16);
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: $color-brown;
+        }
+    }
+
+    &-bottom {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        font-weight: 400;
+        font-size: vc(16);
+        line-height: vc(20);
+        color: $color-white;
+    }
+
+    &-conf {
+    }
+
+    &-prod {
+        display: flex;
+        align-items: center;
+
+        img {
+            margin-right: vc(15);
+            width: vc(49.98);
+            height: vc(36.52);
+        }
+    }
+}

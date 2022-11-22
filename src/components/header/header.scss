@@ -1,0 +1,147 @@
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: vc(81);
+
+    &-left {
+        display: flex;
+        align-items: center;
+    }
+
+    &-right {
+        display: flex;
+        align-items: center;
+    }
+
+    &-logo {
+        display: block;
+        width: vc(181);
+        height: vc(68.87);
+        color: $color-theme;
+
+        .is-home & {
+            color: $color-white;
+        }
+    }
+
+    &-text {
+        display: none;
+        margin-left: vc(69);
+        padding-top: vc(11);
+        font-weight: 700;
+        font-size: vc(24.2871);
+        line-height: vc(30);
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: $color-white;
+
+        svg {
+            display: inline-block;
+            width: vc(21.45);
+
+            height: vc(20.5);
+        }
+
+        .is-home & {
+            display: block;
+        }
+    }
+
+    &-social {
+        display: flex;
+        align-items: center;
+    }
+
+    &-link {
+        margin-right: vc(56.53);
+        transition: all 0.5s linear;
+
+        &--vk {
+            margin-right: vc(46.61);
+            width: vc(52.86);
+            height: vc(52.86);
+        }
+
+        &--fb {
+            width: vc(54);
+            height: vc(54);
+        }
+    }
+
+    &-number {
+        margin-right: vc(56);
+        border: 2px solid $color-brown;
+        border-radius: 5px;
+        padding: vc(17) vc(37);
+        font-weight: 400;
+        font-size: vc(16);
+        line-height: vc(16);
+        text-align: center;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: $color-white;
+        background: $color-theme;
+        transition: all 0.5s linear;
+
+        @include desktop {
+            &:hover {
+                background: $color-brown;
+            }
+        }
+    }
+
+    &-bcalc {
+        margin-right: vc(52);
+        border: 2px solid $color-brown;
+        border-radius: 5px;
+        padding: vc(16) vc(48) vc(18);
+        font-weight: 400;
+        font-size: vc(16);
+        line-height: vc(16);
+        text-align: center;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        background: $color-brown;
+        color: $color-white;
+        transition: all 0.5s linear;
+        cursor: pointer;
+
+        @include desktop {
+            &:hover {
+                background: $color-theme;
+            }
+        }
+    }
+
+    &-burger {
+        z-index: 100;
+        flex-direction: column;
+        margin: vc(-6.5 * 0.5) 0;
+        margin-left: auto;
+        width: vc(58);
+        color: $color-brown;
+
+        span {
+            display: block;
+            border-radius: 5px;
+            margin: vc(15.5) 0;
+            width: vc(58);
+            height: vc(4);
+            background-color: currentColor;
+            transition: $duration-normal;
+        }
+
+        @include active {
+            span {
+                &:first-child {
+                    transform: translate(0, vc(8)) rotate(-45deg);
+                }
+
+                &:last-child {
+                    transform: translate(0, vc(-6)) rotate(45deg);
+                }
+            }
+        }
+    }
+}

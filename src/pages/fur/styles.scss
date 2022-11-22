@@ -1,0 +1,159 @@
+.furniture {
+    margin-top: 45px;
+
+    &-item {
+        display: flex;
+        margin-bottom: 251px;
+
+        &:last-child {
+            margin-bottom: 363px;
+        }
+
+        &:nth-child(1) {
+            .furniture-left {
+                padding-top: 84px;
+            }
+        }
+
+        &:nth-child(2n) {
+            margin-bottom: 23px;
+
+            .furniture-left {
+                order: 2;
+                margin-top: 120px;
+            }
+
+            .furniture-right {
+                order: 1;
+
+
+                .slider {
+                    margin-top: 0;
+                }
+            }
+        }
+
+        &--color {
+
+            .furniture-text,
+            .furniture-title {
+                color: $color-white;
+            }
+
+            .furniture-left {
+                background: $color-brown;
+            }
+        }
+    }
+
+    &-left {
+        border: 1px solid $color-brown;
+        padding: 324px 88px 80px;
+        width: 646.62px;
+    }
+
+    &-right {
+
+        width: 1003.38px;
+        height: 646.62px;
+    }
+
+    &-icon {
+        margin-bottom: 55px;
+        width: 120px;
+        height: 120px;
+    }
+
+    &-title {
+        font-weight: 700;
+        font-size: 32px;
+        line-height: 32px;
+        color: $color-brown;
+        letter-spacing: 0.1em;
+    }
+
+    &-text {
+        margin-top: 30px;
+        margin-bottom: 55px;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 20px;
+        color: $color-blacks;
+    }
+
+    &-link {
+        padding: 18px 120px 16px;
+        border: 2px solid $color-theme;
+        border-radius: 5px;
+        background: $color-theme;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 16px;
+        color: $color-white;
+
+        @include desktop {
+            &:hover {
+                background: $color-brown;
+            }
+        }
+    }
+}
+
+.slider {
+    margin-top: 120px;
+    margin-bottom: 0 !important;
+    &-item {
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+
+    .slick-prev {
+        left: 19px;
+    }
+
+    .slick-next {
+        right: 19px;
+    }
+
+    .slick-arrow {
+        width: 15.68px;
+        height: 30px;
+        z-index: 2;
+
+        &::before {
+            display: none;
+        }
+    }
+
+    .slick-dots {
+        bottom: 23px;
+
+        li {
+            margin: 0 2.5px;
+            width: 7.43px;
+            height: 5.94px;
+            background: $color-white;
+            transition: all 0.2s linear;
+
+            &.slick-active {
+                width: 18.58px;
+                background: $color-brown;
+            }
+        }
+
+        button {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+
+
+            &::before {
+                display: none;
+            }
+        }
+    }
+}
