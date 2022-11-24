@@ -11,10 +11,10 @@ export const output = {
     clean: true, // чистить папку перед сборкой
     publicPath: config.html.isProd() ? `${config.html.publicPath}` : `${config.html.publicPathDev}`, // исходный путь до файлов абсолютный или релативный
     path: paths.build.base,
-    filename: isDev() ? '[name].js' : '[name].[contenthash].js',
-    chunkFilename: isDev() ? '[name].js' : '[name].[contenthash].js',
+    filename: isDev() ? '[name].js' : '[name].js',
+    chunkFilename: isDev() ? '[name].js' : '[name].js',
     crossOriginLoading: 'anonymous',
-    assetModuleFilename: 'assets/[name].[hash:8][ext]',
+    assetModuleFilename: 'assets/[name].[ext]',
     module: true,
     // какие ES-функции могут быть использованы в сгенерированном коде
     environment: {

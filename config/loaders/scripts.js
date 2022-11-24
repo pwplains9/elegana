@@ -10,6 +10,6 @@ export const scripts = {
     exclude: /node_modules/,
     use: ['babel-loader'],
     generator: {
-        filename: 'assets/javascript/[name].[hash:8][ext]'
+        filename: 'assets/javascript/[name].[ext]'
     },
 };

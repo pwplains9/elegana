@@ -1,0 +1,54 @@
+extends @pug/base
+
+append globals
+    - pageName = 'home'
+    - title = data[pageName]?.meta?.title ?? data.general.title
+    - description = data[pageName]?.meta?.description ?? data.general.description
+    - image = data[pageName]?.meta?.image ?? data.general.image
+
+append vars
+    - meta.keywords = data[pageName]?.meta?.keywords ?? data.general.keywords
+
+    each linkValue, linkKey in data.general.link
+        - link[linkKey] = linkValue
+
+    each metaValue, metaKey in data.general.meta
+        - meta[metaKey] = metaValue
+
+block content
+    .site(data-scroll-container)
+        include @components/header/header
+
+        .container
+            ul.breadcrumbs
+                li
+                    a(href="/") Главная
+                li
+                    a(href='#')
+                        | Контакты
+            .contacts
+                .contacts-left
+                    .title
+                        | контакты
+                    .contacts-title
+                        | Адрес
+                    .contacts-text
+                        | г. Уфа, ул. Карла Маркса, 65
+                    .contacts-title
+                        | Телефон
+                    .contacts-links
+                        a(href="telto:79872543434")
+                            | +7 987 254 34 34
+
+                        a(href="telto:73470000000")
+                            | +7 347 000 00 00
+                    .contacts-title
+                        | E-mail
+                    .contacts-links
+                        | info@elegana.ru
+                    .contacts-button
+                        | перезвоните мне
+                .contacts-right
+                    .map
+                        iframe(src='https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d287164.3957364513!2d37.56001153882795!3d55.78504431936198!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sru!2sru!4v1669287062881!5m2!1sru!2sru' width='600' height='450' style='border:0;' allowfullscreen='' loading='lazy' referrerpolicy='no-referrer-when-downgrade')
+        include @components/footer/footer

@@ -19,6 +19,8 @@ import router from "../components/router/router";
 import header from "../components/header/header";
 import 'slick-carousel'
 import slider from "../components/slider/slider";
+import popupSlider from "../components/slider/popupSlider";
+import reviewsSlider from "../components/slider/reviewsSlider";
 gsap.registerPlugin(Draggable, ScrollTrigger);
 
 window.LocomotiveScroll = LocomotiveScroll;
@@ -64,6 +66,8 @@ const init = () => {
     header.init();
     scroller.init()
     slider.init();
+    popupSlider.init();
+    reviewsSlider.init();
 
     resizeWidth = innerWidth;
 

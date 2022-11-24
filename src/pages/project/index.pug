@@ -1,0 +1,87 @@
+extends @pug/base
+
+append globals
+    - pageName = 'home'
+    - title = data[pageName]?.meta?.title ?? data.general.title
+    - description = data[pageName]?.meta?.description ?? data.general.description
+    - image = data[pageName]?.meta?.image ?? data.general.image
+
+append vars
+    - meta.keywords = data[pageName]?.meta?.keywords ?? data.general.keywords
+
+    each linkValue, linkKey in data.general.link
+        - link[linkKey] = linkValue
+
+    each metaValue, metaKey in data.general.meta
+        - meta[metaKey] = metaValue
+
+block content
+    .site(data-scroll-container)
+        include @components/header/header
+        .container
+            ul.breadcrumbs
+                li
+                    a(href="/") Главная
+                li
+                    a(href='#')
+                        | Для дизайнеров
+        .container
+            .project
+                .project-left
+                    .title
+                        | Кухня элегана
+                    .text
+                        | Наша флагманская кухня, продуманная до мелочей. Премиальная фурнитура Blum и элегантные фасады, функциональный остров, большая мойка и максимум эргономичных рабочих поверхностей.
+                    .project-numbers
+                        .project-el
+                            span
+                                | от
+                            | 159 000 ₽
+                            .text-md
+                                | цена в базовой комплектации
+                        .project-el
+                            span
+                                | от
+                            | 26 500 ₽/
+                            span
+                                | мес
+                            .text-md
+                                | в рассрочку на 3-6 месяцев
+                    .title-sm
+                        | Характеристики
+                    .project-info
+                        .project-line
+                            .project-param
+                                | Столешница
+                            span
+                                | Искусственный камень
+                        .project-line
+                            .project-param
+                                | Фасады
+                            span
+                                | МДФ
+                        .project-line
+                            .project-param
+                                | Фурнитура
+                            span
+                                | Blum (Австрия)
+                        .project-line
+                            .project-param
+                                | Стиль
+                            span
+                                | Модерн
+                    .project-button.project-button--brown
+                        | рассчитать по моим размерам
+                    .project-button
+                        | все проекты
+                .project-right.anim-fade(data-scroll data-scroll-delay="5")
+                    .slider.slider--lg.slider--1
+                        .slider-item
+                            img(src=`${baseDir}assets/images/furniture/1.jpg` alt='')
+                        .slider-item
+                            img(src=`${baseDir}assets/images/furniture/1.jpg` alt='')
+                        .slider-item
+                            img(src=`${baseDir}assets/images/furniture/1.jpg` alt='')
+                        .slider-item
+                            img(src=`${baseDir}assets/images/furniture/1.jpg` alt='')
+        include @components/footer/footer

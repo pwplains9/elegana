@@ -168,6 +168,11 @@ iframe {
     padding: 0 vc(15);
     max-width: 100%;
     max-width: vc(1680);
+
+    &--df {
+        display: flex;
+        justify-content: space-between;
+    }
 }
 
 .site {
@@ -216,11 +221,11 @@ canvas {
 .breadcrumbs {
     display: flex;
     align-items: center;
-    margin-top: 55px;
-    margin-bottom: 65px;
+    margin-top: vc(55);
+    margin-bottom: vc(65);
     font-weight: 400;
-    font-size: 14px;
-    line-height: 17px;
+    font-size: vc(14);
+    line-height: vc(17);
     color: $color-gray;
 
     li {
@@ -245,13 +250,14 @@ canvas {
     position: relative;
     display: inline-block;
     margin: 0;
-    margin-bottom: 40px;
+    margin-bottom: vc(40);
     font-weight: 300;
-    font-size: 62px;
-    line-height: 77px;
+    font-size: vc(62);
+    line-height: vc(77);
     letter-spacing: 0.1em;
     text-transform: uppercase;
     color: $color-theme;
+    white-space: nowrap;
 
     &::after {
         content: "";
@@ -263,15 +269,77 @@ canvas {
         background: url("../assets/images/icon.svg") center center no-repeat;
         background-size: contain;
     }
+
+    &-md {
+        margin-top: vc(76);
+        font-weight: 700;
+        font-size: vc(32);
+        line-height: vc(40);
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: $color-theme;
+
+        .form & {
+            margin-top: 0;
+            margin-bottom: vc(31);
+            color: $color-white;
+        }
+    }
+
+    &-sm {
+        margin-bottom: vc(50);
+        font-weight: 700;
+        font-size: vc(16);
+        line-height: vc(20);
+        color: $color-brown;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+    }
+
+    &-xs {
+        margin-top: vc(26);
+        margin-bottom: vc(5);
+        font-family: $HelveticaNW;
+        font-weight: 500;
+        font-size: vc(32);
+        line-height: vc(35);
+        color: $color-theme;
+    }
+
+    &--white {
+        color: $color-white;
+
+        &::after {
+            background: url("../assets/images/icon-white.svg") center center no-repeat;
+
+        }
+    }
 }
 
 .text {
-    margin-bottom: 53px;
-    max-width: 734px;
+    margin-bottom: vc(53);
+    max-width: vc(734);
     font-weight: 400;
-    font-size: 16px;
-    line-height: 20px;
+    font-size: vc(16);
+    line-height: vc(20);
     color: $color-text;
+
+    &--mb {
+        margin-bottom: vc(20);
+    }
+
+    &-md {
+        font-size: vc(14);
+        line-height: vc(17);
+        color: $color-text;
+    }
+
+    &-xs {
+        font-weight: 400;
+        font-size: vc(16);
+        line-height: vc(20);
+        color: $color-gray;
+    }
 }
 
 .anim-fade {
@@ -285,9 +353,33 @@ canvas {
         transform: none;
     }
 
-    //@for $i from 1 through 10 {
-    //    &:nth-child(#{$i}) {
-    //        transition-delay: $i * 0.1 + s;
-    //    }
-    //}
+    &--childs {
+        @for $i from 1 through 10 {
+            &:nth-child(#{$i}) {
+                transition-delay: $i * 0.1 + s;
+            }
+        }
+    }
+}
+
+.anim-scale {
+    position: relative;
+    opacity: 0;
+    transform: scale(1.5);
+    transition: all .6s cubic-bezier(.215,.61,.355,1);
+
+    &.is-inview {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+    @for $i from 1 through 10 {
+        &:nth-child(#{$i}) {
+            transition-delay: $i * 0.1 + s;
+        }
+    }
+}
+
+.col {
+    width: vc(810);
 }

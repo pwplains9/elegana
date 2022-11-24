@@ -1,0 +1,144 @@
+.about-card {
+    display: flex;
+    padding: vc(108) 0 vc(106);
+
+    &--color {
+        color: $color-white;
+        background: $color-brown;
+    }
+
+    &:nth-child(2n - 1) {
+        .about-right {
+            margin-left: vc(142);
+
+        }
+    }
+
+    &:nth-child(2n) {
+        .about-right {
+            order: 1;
+        }
+
+        .about-left {
+            padding-left: vc(158);
+            order: 2;
+        }
+
+        .about-img {
+            width: vc(950);
+        }
+
+        .about-number {
+            span {
+                color: $color-white;
+            }
+        }
+
+        .title-md,
+        .text-md {
+            color: $color-white;
+        }
+    }
+
+    .title-md {
+        margin-top: vc(27);
+        margin-bottom: vc(43);
+    }
+
+    .text-md {
+        margin-bottom: vc(15);
+        font-size: vc(16);
+        line-height: vc(20);
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+}
+
+.about {
+    &-left {
+        display: flex;
+    }
+
+    &-img {
+        flex-shrink: 0;
+        overflow: hidden;
+
+        img {
+            height: 150%;
+            object-fit: cover;
+        }
+
+        &--1 {
+            position: relative;
+            top: vc(-57);
+        }
+
+        &--2 {
+            position: relative;
+            right: vc(29);
+        }
+
+        &--50 {
+            width: vc(420);
+            height: vc(482);
+        }
+
+
+        &--3 {
+            margin-right: vc(31);
+            width: vc(389);
+            height: vc(559);
+        }
+
+        &--4 {
+            width: vc(389);
+            height: vc(559);
+        }
+
+    }
+
+    &-right {
+        display: flex;
+        flex-flow: column;
+        justify-content: flex-end;
+
+    }
+
+    &-number {
+        font-weight: 300;
+        font-size: vc(62);
+        line-height: vc(77);
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: $color-theme;
+
+        span {
+            color: $color-brown;
+        }
+    }
+}
+
+.company {
+    padding-top: vc(70);
+    background: $color-brown;
+
+    .title {
+        margin-bottom: vc(15);
+    }
+
+    .text-xs {
+        color: $color-white;
+    }
+
+    .gallery-img {
+        height: vc(300);
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+}

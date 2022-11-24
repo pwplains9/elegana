@@ -19,6 +19,6 @@ export const styles = {
         'sass-loader',
     ],
     generator: {
-        filename: 'assets/styles/[name].[hash:8][ext]'
+        filename: 'assets/styles/[name].[ext]'
     },
 };

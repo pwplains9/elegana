@@ -9,6 +9,6 @@ export const fonts = {
     test: /\.(woff(2)?|eot|ttf|otf|)$/,
     type: 'asset/resource',
     generator: {
-        filename: 'assets/resource/[name].[hash:8][ext]'
+        filename: 'assets/resource/[name].[ext]'
     },
 };

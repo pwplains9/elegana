@@ -11,8 +11,6 @@
         background: $color-item-card;
         transition: all 0.5s linear;
 
-
-
         .process-svg--1,
         .process-svg--2,
         .process-svg--3,
@@ -58,6 +56,10 @@
             .process-img {
                 left: auto;
                 right: 0;
+            }
+
+            .process-content {
+                padding-right: vc(140);
             }
         }
 

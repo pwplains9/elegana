@@ -77,7 +77,7 @@ const init = () => {
         el: $scroller,
         smooth: true,
         lerp: isDevices ? 0.1 : 0.03,
-        multiplier: isDevices ? 1.25 : 2,
+        multiplier: isDevices ? 1.25 : 1,
         firefoxMultiplier: isDevices ? 62 : 100,
         touchMultiplier: isDevices ? 2.25 : 2,
         scrollFromAnywhere: true,

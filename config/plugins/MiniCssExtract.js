@@ -7,6 +7,6 @@ import MiniCssExtractPlugin from 'mini-css-extract-plugin';
  * @see https://webpack.js.org/plugins/mini-css-extract-plugin/
  */
 export const MiniCssExtract = new MiniCssExtractPlugin({
-    filename: isDev() ? '[name].css' : '[name].[contenthash].css',
-    chunkFilename: isDev() ? '[name].css' : '[name].[contenthash].css',
+    filename: isDev() ? '[name].css' : '[name].css',
+    chunkFilename: isDev() ? '[name].css' : '[name].css',
 });

@@ -1,0 +1,197 @@
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-top: vc(65);
+    margin-bottom: vc(97);
+
+    &-item {
+        margin: 0 0 28px;
+        width: calc(25% - 15px);
+        cursor: pointer;
+    }
+
+    &-img {
+
+    }
+
+    &-link {
+        margin-top: 15px;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 16px;
+        text-align: center;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: $color-white;
+
+        padding: 18px 0 16px;
+        border: 2px solid $color-theme;
+        background: $color-theme;
+        border-radius: 10px;
+        transition: all 0.5s linear;
+
+        @include desktop {
+            &:hover {
+                background: $color-brown;
+            }
+        }
+    }
+
+    &--portfolio {
+        margin-bottom: 37px;
+    }
+}
+
+.popup {
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    z-index: 20;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    height: var(--vh);
+    margin-top: 0 !important;
+
+    &-bg {
+        position: fixed;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        background: rgba(68, 68, 68, 0.7);
+        cursor: pointer;
+    }
+
+    &-content {
+        position: relative;
+        z-index: 2;
+        display: flex;
+        padding: vc(107) vc(111);
+        width: vc(1650);
+        background: #FFFFFF;
+        border-radius: 20px;
+    }
+
+    &-left {
+
+    }
+
+    &-right {
+        position: relative;
+        display: flex;
+        flex-flow: column;
+        justify-content: flex-end;
+        width: 100%;
+        margin-left: vc(110);
+    }
+
+    &-close {
+        position: absolute;
+        right: 0;
+        top: 0;
+        width: vc(25.16);
+        height: vc(25.16);
+        cursor: pointer;
+    }
+
+    &-right {
+
+    }
+
+    &-title {
+        font-weight: 500;
+        font-size: vc(32);
+        line-height: vc(35);
+        color: $color-theme;
+    }
+
+    &-number {
+        margin-top: vc(12);
+        margin-bottom: vc(44);
+        font-weight: 400;
+        font-size: vc(16);
+        line-height: vc(20);
+        color: #ADADAD;
+    }
+
+    &-info {
+
+    }
+
+    &-line {
+        display: flex;
+        justify-content: space-between;
+        color: #ADADAD;
+        margin-bottom: vc(12);
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+
+    &-param {
+        font-weight: 400;
+        font-size: vc(16);
+        line-height: vc(20);
+
+    }
+
+    &-value {
+        font-weight: 500;
+        font-size: vc(20);
+        line-height: vc(25);
+    }
+
+    &-button {
+        margin-top: vc(25);
+        padding: vc(25) 0 vc(23);
+        background: $color-theme;
+        border: 2px solid $color-brown;
+        border-radius: 10px;
+        font-weight: 400;
+        font-size: vc(16);
+        line-height: vc(16);
+        text-align: center;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: $color-white;
+        transition: all 0.5s linear;
+        cursor: pointer;
+
+        @include desktop {
+            &:hover {
+                background: $color-brown;
+            }
+        }
+    }
+}
+
+.load-more {
+    margin: 0 auto 110px;
+    padding: 18px 0;
+    width: 312px;
+    border: 1px solid #686868;
+    border-radius: 10px;
+
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 16px;
+    text-align: center;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #686868;
+    transition: all 0.5s linear;
+    cursor: pointer;
+
+    @include desktop {
+        &:hover {
+            color: $color-white;
+            background: $color-theme;
+        }
+    }
+}

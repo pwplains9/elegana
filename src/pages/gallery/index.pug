@@ -1,0 +1,120 @@
+extends @pug/base
+
+append globals
+    - pageName = 'home'
+    - title = data[pageName]?.meta?.title ?? data.general.title
+    - description = data[pageName]?.meta?.description ?? data.general.description
+    - image = data[pageName]?.meta?.image ?? data.general.image
+
+append vars
+    - meta.keywords = data[pageName]?.meta?.keywords ?? data.general.keywords
+
+    each linkValue, linkKey in data.general.link
+        - link[linkKey] = linkValue
+
+    each metaValue, metaKey in data.general.meta
+        - meta[metaKey] = metaValue
+
+block content
+    .popup.is-hidden(data-item="1")
+        .popup-bg
+        .popup-content.is-hidden
+            .popup-left
+                .popup-slider
+                    .popup-item
+                        img(src=`${baseDir}assets/images/furniture/1.jpg` alt='')
+                    .popup-item
+                        img(src=`${baseDir}assets/images/furniture/1.jpg` alt='')
+                    .popup-item
+                        img(src=`${baseDir}assets/images/furniture/1.jpg` alt='')
+                    .popup-item
+                        img(src=`${baseDir}assets/images/furniture/1.jpg` alt='')
+            .popup-right
+                .popup-close
+                    <svg width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12.5808 10.1823L2.39851 0L0 2.39851L10.1823 12.5808L0 22.7632L2.39851 25.1617L12.5808 14.9794L22.7632 25.1617L25.1617 22.7632L14.9794 12.5808L25.1617 2.39851L22.7632 1.3487e-06L12.5808 10.1823Z" fill="#ADADAD"/>
+                    </svg>
+
+                .popup-title
+                    | Белая
+                    | современная кухня
+                .popup-number
+                    | 18.10.2022
+                .popup-info
+                    .popup-line
+                        .popup-param
+                            | Площадь
+                        .popup-value
+                            | 12,5 м²
+                    .popup-line
+                        .popup-param
+                            | Стоимость от
+                        .popup-value
+                            | 120 000 ₽
+                .popup-button
+                    | хочу такую же!
+    .site(data-scroll-container)
+
+        include @components/header/header
+        -
+            const dataGallery = [
+                {
+                    title: 'Открытая гардеробная',
+                    text: '18.10.2022'
+                },
+                {
+                    title: 'Темная брутальная кухня',
+                    text: '18.10.2022'
+                },
+                {
+                    title: 'Белая современная кухня',
+                    text: '18.10.2022'
+                },
+                {
+                    title: 'Шкаф-пенал в прихожей',
+                    text: '18.10.2022'
+                },
+                {
+                    title: 'Светлая кухня с островом',
+                    text: '18.10.2022'
+                },
+                {
+                    title: 'Гардеробная в спальне',
+                    text: '18.10.2022'
+                },
+                {
+                    title: 'Светлая прямая кухня',
+                    text: '18.10.2022'
+                },
+                {
+                    title: 'Консоль и система хранения',
+                    text: '18.10.2022'
+                },
+            ]
+        .container
+            ul.breadcrumbs
+                li
+                    a(href="/") Главная
+                li
+                    a(href='#')
+                        | Фотогалерея
+            .title
+                | Фотогалерея
+            .gallery
+                each item, index in dataGallery
+                    .gallery-item.anim-fade.anim-fade--childs.js-popup(data-project=`${index + 1}` data-scroll)
+                        .gallery-img
+                            .slider.slider--1.slider--xs
+                                .slider-item
+                                    img(src=`${baseDir}assets/images/furniture/1.jpg` alt='')
+                                .slider-item
+                                    img(src=`${baseDir}assets/images/furniture/1.jpg` alt='')
+                                .slider-item
+                                    img(src=`${baseDir}assets/images/furniture/1.jpg` alt='')
+                                .slider-item
+                                    img(src=`${baseDir}assets/images/furniture/1.jpg` alt='')
+                        .title-xs
+                            !=item.title
+                        .text-xs
+                            !=item.text
+        include @components/footer/footer

@@ -1,0 +1,125 @@
+.adwantages {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: vc(48);
+    margin-bottom: vc(99);
+
+    &-items {
+        display: flex;
+        align-items: center;
+        margin-right: vc(30);
+        margin-bottom: vc(46);
+        width: 29%;
+    }
+
+    &-icon {
+        flex-shrink: 0;
+        margin-right: vc(12);
+        width: vc(67);
+    }
+
+    &-text {
+        font-weight: 400;
+        font-size: vc(16);
+        line-height: vc(20);
+    }
+}
+
+.form {
+    padding: vc(94) vc(110) vc(95);
+    background: $color-brown;
+    border-radius: 5px;
+
+    &-input {
+        margin-bottom: vc(10);
+        overflow: hidden;
+        border-radius: 10px;
+
+        background: $color-white;
+
+        input {
+            padding: vc(25) vc(30);
+            width: 100%;
+            height: 100%;
+            border: none;
+            font-weight: 400;
+            font-size: vc(16);
+            line-height: vc(20);
+            outline: none;
+
+            &::placeholder {
+                font-weight: 400;
+                font-size: vc(16);
+                line-height: vc(20);
+                color: $color-text;
+            }
+        }
+
+
+    }
+
+    &-textarea {
+        margin-bottom: vc(17);
+        overflow: hidden;
+        border-radius: 10px;
+        height: vc(150);
+        textarea {
+
+            border-radius: 10px;
+            padding: vc(25) vc(30);
+            width: 100%;
+            height: 100%;
+            font-weight: 400;
+            font-size: vc(16);
+            line-height: vc(20);
+            resize: none;
+
+            &::placeholder {
+                font-weight: 400;
+                font-size: vc(16);
+                line-height: vc(20);
+                color: $color-text;
+            }
+        }
+    }
+
+    &-container {
+        display: flex;
+        justify-content: space-between;
+
+        .form-input {
+            width: vc(280);
+        }
+    }
+
+    &-button {
+        margin-bottom: vc(23);
+        padding: vc(27) vc(23);
+        width: 100%;
+        background: $color-theme;
+        border: 2px solid $color-brown;
+        border-radius: 10px;
+        font-weight: 400;
+        font-size: vc(16);
+        text-align: center;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: $color-white;
+        transition: all 0.3s linear;
+
+        @include desktop {
+            &:hover {
+                background: $color-brown;
+                border: 2px solid $color-theme;
+            }
+        }
+    }
+
+    &-text {
+        font-weight: 300;
+        font-size: vc(12);
+        line-height: vc(12);
+        color: $color-white;
+        text-align: center;
+    }
+}

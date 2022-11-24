@@ -1,0 +1,56 @@
+.error-404 {
+    margin-top: vc(109);
+    margin-bottom: vc(209);
+    text-align: center;
+
+    &-svg {
+        position: relative;
+        left: vc(51);
+        margin: 0 auto;
+        width: vc(462.23);
+        height: vc(221.72);
+    }
+
+    &-title {
+        margin-top: vc(61);
+        margin-bottom: vc(17);
+        font-weight: 400;
+        font-size: vc(41.1765);
+        line-height: vc(51);
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: $color-brown;
+    }
+
+    &-text {
+        margin: 0 auto vc(53);
+        width: vc(670);
+        font-weight: 400;
+        font-size: vc(16);
+        line-height: vc(21);
+        color: $color-text;
+    }
+
+    &-button {
+        display: block;
+        margin: 0 auto;
+        border-radius: 5px;
+        padding: vc(14) 0 vc(12);
+        border: 2px solid $color-theme;
+        width: vc(303);
+        font-size: vc(14);
+        line-height: vc(17);
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        text-align: center;
+        color: $color-white;
+        background: $color-theme;
+        transition: all 0.5s linear;
+
+        @include desktop {
+            &:hover {
+                color: $color-brown;
+            }
+        }
+    }
+}

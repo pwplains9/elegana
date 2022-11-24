@@ -1,0 +1,105 @@
+.project {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: vc(167);
+
+    &-left {
+        width: vc(529);
+    }
+
+    &-right {
+        width: vc(950);
+        flex-shrink: 0;
+    }
+
+    &-numbers {
+        display: flex;
+        margin-bottom: vc(50);
+    }
+
+    &-el {
+        width: 50%;
+        font-size: vc(36);
+        line-height: vc(45);
+        font-weight: 300;
+        color: $color-theme;
+
+
+        span {
+            padding-right: vc(5);
+            font-size: vc(24);
+
+            line-height: vc(30);
+        }
+    }
+
+    &-info {
+        margin-bottom: vc(38);
+    }
+
+    &-line {
+        display: flex;
+        margin-bottom: vc(18);
+        border-bottom: 1px solid $color-border;
+        padding-bottom: vc(16);
+
+        span {
+            font-weight: 400;
+            font-size: vc(14);
+            line-height: vc(17);
+            color: #444444;
+        }
+
+        &:last-child {
+            border-bottom: none;
+        }
+    }
+
+    &-param {
+        width: 47.6%;
+        font-weight: 400;
+        font-size: vc(14);
+        line-height: vc(17);
+        color: $color-text;
+    }
+
+    &-button {
+        width: 100%;
+        padding: vc(24) 0 vc(22);
+        border: 2px solid $color-brown;
+        border-radius: 10px;
+        font-size: vc(16);
+        line-height: vc(16);
+        color: $color-brown;
+        text-align: center;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        transition: all 0.5s linear;
+        cursor: pointer;
+
+        &--brown {
+            margin-bottom: vc(9);
+            background: $color-brown;
+
+            color: $color-white;
+        }
+
+        @include desktop {
+            &:hover {
+                background: $color-brown;
+
+                color: $color-white;
+
+
+            }
+
+            &--brown {
+                &:hover {
+                    background: transparent !important;
+                    color: $color-brown !important;
+                }
+
+            }
+        }
+    }
+}

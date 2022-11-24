@@ -1,0 +1,127 @@
+extends @pug/base
+
+append globals
+    - pageName = 'home'
+    - title = data[pageName]?.meta?.title ?? data.general.title
+    - description = data[pageName]?.meta?.description ?? data.general.description
+    - image = data[pageName]?.meta?.image ?? data.general.image
+
+append vars
+    - meta.keywords = data[pageName]?.meta?.keywords ?? data.general.keywords
+
+    each linkValue, linkKey in data.general.link
+        - link[linkKey] = linkValue
+
+    each metaValue, metaKey in data.general.meta
+        - meta[metaKey] = metaValue
+
+block content
+    .site(data-scroll-container)
+        include @components/header/header
+        .container
+            ul.breadcrumbs
+                li
+                    a(href="/") Главная
+                li
+                    a(href='#')
+                        | Для дизайнеров
+            .title
+                | о компании
+        .about
+            .container
+                .about-card
+                    .about-left
+                        .about-img.about-img--1.about-img--50
+                            img(src=`${baseDir}assets/images/process/1.jpg` alt='' data-scroll data-scroll-speed="-1.5")
+                        .about-img.about-img--2.about-img--50
+                            img(src=`${baseDir}assets/images/process/1.jpg` alt='' data-scroll data-scroll-speed="-1.5")
+                    .about-right
+                        .about-number
+                            span
+                                | 01
+                            | /3
+                        .title-md
+                            | Кухня может быть любой, если это кухня элегана!
+                        .text-md
+                            | Мы решили, что в кухнях Elegana не будет никаких компромиссов. Ваша кухня будет такой, как вы пожелаете.
+                        .text-md
+                            | Европейский минимализм, роскошная классика; функциональная кухня для любителей готовить или стильное пространство для встреч с друзьями? С верхними шкафами или без, с высокими пеналами или вовсе скрытая? Выбирать только вам!
+
+            .about-card.about-card--color
+                .container.container--df
+                    .about-left
+                        .about-img
+                            img(src=`${baseDir}assets/images/process/1.jpg` alt='' data-scroll data-scroll-speed="-1.5")
+
+                    .about-right
+                        .about-number
+                            span
+                                | 02
+                            | /3
+                        .title-md
+                            | производство
+                        .text-md
+                            | Контроль качества на каждом этапе и четкое соблюдение сроков — преимущества, доступные нам благодаря собственному производству. Есть покрасочный цех, поэтому ваши фасады будут любого оттенка, который вы пожелаете, не выцветут со временем и прослужат долго.
+                        .text-md
+                            | Мы уверены в каждом предмете мебели и готовы воплотить уникальные задумки по индивидуальным заказам.
+            .container
+                .about-card
+                    .about-left
+                        .about-img.about-img--3
+                            img(src=`${baseDir}assets/images/process/1.jpg` alt='' )
+                        .about-img.about-img--4
+                            img(src=`${baseDir}assets/images/process/1.jpg` alt='')
+                    .about-right
+                        .about-number
+                            span
+                                | 03
+                            | /3
+                        .title-md
+                            | наш подход
+                        .text-md
+                            | Ваша кухня будет радовать вас долгое время, ведь мы принципиально не работаем с дешевой фурнитурой и материалами, способными вас разочаровать. Сами красим фасады и не используем пленку, с вниманием подходим к каждому проекту и не боимся нестандартных решений.
+        -
+            const dataAbout = [
+                {
+                    title: 'Елизавета Гончарук',
+                    text: 'исполнительный директор'
+                },
+                {
+                    title: 'Артур Михалков',
+                    text: 'коммерческий директор'
+                },
+                {
+                    title: 'Анна Кудряшова',
+                    text: 'дизайнер '
+                },
+                {
+                    title: 'Александр Иванов',
+                    text: 'руководитель производства'
+                },
+                {
+                    title: 'Дмитрий Кузнецов ',
+                    text: 'инжинер производства'
+                },
+                {
+                    title: 'Инна Рассказова',
+                    text: 'менеджер'
+                },
+                {
+                    title: 'Алексей Глушко',
+                    text: 'менеджер по закупке'
+                },
+            ]
+        .company
+            .container
+                .title.title--white
+                    | Команда
+                .gallery
+                    each item, index in dataAbout
+                        .gallery-item.gallery-item--company.anim-fade.anim-fade--childs(data-scroll)
+                            .gallery-img
+                                img(src=`${baseDir}assets/images/furniture/1.jpg` alt='')
+                            .title-xs
+                                !=item.title
+                            .text-xs
+                                !=item.text
+        include @components/footer/footer

@@ -1,5 +1,5 @@
 const init = () => {
-    const furniture = document.querySelectorAll('.furniture');
+    const furniture = document.querySelectorAll('.slider');
 
     if (furniture.length) {
         console.log('init')
@@ -11,6 +11,7 @@ const init = () => {
                 dots: true,
                 infinite: true,
                 autoplay: true,
+                autoplaySpeed: 7000,
                 slidesToShow: 1,
                 arrows: true,
                 prevArrow:"<button type='button' class='slick-prev pull-left'><svg width=\"17\" height=\"30\" viewBox=\"0 0 17 30\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">\n" +
