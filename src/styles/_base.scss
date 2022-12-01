@@ -173,6 +173,10 @@ iframe {
         display: flex;
         justify-content: space-between;
     }
+
+    @include devices {
+        padding: 0 vc(30);
+    }
 }
 
 .site {
@@ -231,7 +235,7 @@ canvas {
     li {
         &::after {
             content: "—";
-            margin: 0 4px;
+            margin: 0 vc(4);
         }
 
         &:last-child {
@@ -243,6 +247,13 @@ canvas {
         a {
             color: $color-gray;
         }
+    }
+
+    @include devices {
+        margin-top: vc(27);
+        margin-bottom: vc(25);
+        font-size: vc(10);
+        line-height: vc(12);
     }
 }
 
@@ -268,6 +279,13 @@ canvas {
         height: 30px;
         background: url("../assets/images/icon.svg") center center no-repeat;
         background-size: contain;
+
+        @include devices {
+            right: vc(-10);
+            top: vc(-4);
+            width: vc(13);
+            height: vc(13);
+        }
     }
 
     &-md {
@@ -284,6 +302,16 @@ canvas {
             margin-bottom: vc(31);
             color: $color-white;
         }
+
+        @include devices {
+            margin-top: vc(56);
+            font-size: 20px;
+            line-height: 25px;
+
+            .form & {
+                margin-bottom: 22px;
+            }
+        }
     }
 
     &-sm {
@@ -294,6 +322,12 @@ canvas {
         color: $color-brown;
         letter-spacing: 0.1em;
         text-transform: uppercase;
+
+        @include devices {
+            margin-bottom: vc(32);
+            font-size: vc(20);
+            line-height: vc(25);
+        }
     }
 
     &-xs {
@@ -304,6 +338,13 @@ canvas {
         font-size: vc(32);
         line-height: vc(35);
         color: $color-theme;
+
+        @include devices {
+            margin-top: vc(17);
+            margin-bottom: vc(9);
+            font-size: vc(24);
+            line-height: vc(26);
+        }
     }
 
     &--white {
@@ -313,6 +354,12 @@ canvas {
             background: url("../assets/images/icon-white.svg") center center no-repeat;
 
         }
+    }
+
+    @include devices {
+        margin-bottom: 5px;
+        font-size: vc(30);
+        line-height: vc(37);
     }
 }
 
@@ -332,6 +379,11 @@ canvas {
         font-size: vc(14);
         line-height: vc(17);
         color: $color-text;
+
+        @include devices {
+            font-size: vc(12);
+            line-height: vc(15);
+        }
     }
 
     &-xs {
@@ -339,6 +391,17 @@ canvas {
         font-size: vc(16);
         line-height: vc(20);
         color: $color-gray;
+
+        @include devices {
+            font-size: vc(12);
+            line-height: vc(15);
+        }
+    }
+
+    @include devices {
+        margin-bottom: vc(21);
+        font-size: vc(12);
+        line-height: vc(15);
     }
 }
 
@@ -381,5 +444,7 @@ canvas {
 }
 
 .col {
-    width: vc(810);
+    @include desktop {
+        width: vc(810);
+    }
 }

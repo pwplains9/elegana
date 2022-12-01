@@ -5,10 +5,21 @@
 
     &-svg {
         position: relative;
-        left: vc(51);
+
         margin: 0 auto;
-        width: vc(462.23);
-        height: vc(221.72);
+
+
+        @include desktop {
+            left: vc(51);
+            width: vc(462.23);
+            height: vc(221.72);
+        }
+
+        @include devices {
+            left: 21px;
+            width: 275.6px;
+            height: 135.29px;
+        }
     }
 
     &-title {
@@ -20,15 +31,31 @@
         letter-spacing: 0.1em;
         text-transform: uppercase;
         color: $color-brown;
+
+        @include devices {
+            margin-top: vc(52);
+            margin-bottom: vc(24);
+            font-size: vc(30);
+            line-height: vc(37);
+        }
     }
 
     &-text {
         margin: 0 auto vc(53);
-        width: vc(670);
         font-weight: 400;
         font-size: vc(16);
         line-height: vc(21);
         color: $color-text;
+
+        @include desktop {
+            width: vc(670);
+        }
+
+        @include devices {
+            margin-bottom: vc(51);
+            font-size: vc(12);
+            line-height: vc(15);
+        }
     }
 
     &-button {
@@ -52,5 +79,19 @@
                 color: $color-brown;
             }
         }
+
+        @include devices {
+            border-radius: 4px;
+            padding-top: vc(13);
+            padding-bottom: vc(10);
+            width: vc(315);
+            font-size: vc(13);
+            line-height: vc(16);
+        }
+    }
+
+    @include devices {
+        margin-top: 47px;
+        margin-bottom: 60px;
     }
 }

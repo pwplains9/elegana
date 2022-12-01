@@ -1,27 +1,53 @@
 .adwantages {
-    display: flex;
-    flex-wrap: wrap;
+
     margin-top: vc(48);
     margin-bottom: vc(99);
 
     &-items {
         display: flex;
         align-items: center;
-        margin-right: vc(30);
-        margin-bottom: vc(46);
-        width: 29%;
+
+        @include desktop {
+            margin-right: vc(30);
+            margin-bottom: vc(46);
+            width: 29%;
+        }
+
+        @include devices {
+            margin-bottom: vc(5);
+        }
     }
 
     &-icon {
         flex-shrink: 0;
         margin-right: vc(12);
         width: vc(67);
+
+        @include devices {
+            margin-right: vc(25);
+            width: vc(59.24)
+        }
     }
 
     &-text {
         font-weight: 400;
         font-size: vc(16);
         line-height: vc(20);
+
+        @include devices {
+            font-size: vc(12);
+            line-height: vc(15);
+        }
+    }
+
+    @include desktop {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    @include devices {
+        margin-top: vc(23);
+        margin-bottom: vc(59);
     }
 }
 
@@ -52,10 +78,19 @@
                 font-size: vc(16);
                 line-height: vc(20);
                 color: $color-text;
+
+                @include devices {
+                    font-size: vc(12);
+                    line-height: vc(15);
+                }
+            }
+
+            @include devices {
+                padding: vc(14) vc(20);
+                font-size: vc(12);
+                line-height: vc(15);
             }
         }
-
-
     }
 
     &-textarea {
@@ -64,7 +99,7 @@
         border-radius: 10px;
         height: vc(150);
         textarea {
-
+            border: none;
             border-radius: 10px;
             padding: vc(25) vc(30);
             width: 100%;
@@ -79,17 +114,30 @@
                 font-size: vc(16);
                 line-height: vc(20);
                 color: $color-text;
+
+                @include devices {
+                    font-size: vc(12);
+                    line-height: vc(15);
+                }
+            }
+
+            @include devices {
+                padding: vc(14) vc(20);
+                font-size: vc(12);
+                line-height: vc(15);
             }
         }
     }
 
     &-container {
-        display: flex;
-        justify-content: space-between;
+       @include desktop {
+           display: flex;
+           justify-content: space-between;
 
-        .form-input {
-            width: vc(280);
-        }
+           .form-input {
+               width: vc(280);
+           }
+       }
     }
 
     &-button {
@@ -113,6 +161,14 @@
                 border: 2px solid $color-theme;
             }
         }
+
+        @include devices {
+            margin-bottom: 9px;
+            padding-top: vc(13);
+            padding-bottom: vc(10);
+            font-size: vc(13);
+            line-height: vc(16);
+        }
     }
 
     &-text {
@@ -121,5 +177,15 @@
         line-height: vc(12);
         color: $color-white;
         text-align: center;
+
+        @include devices {
+            font-size: vc(10);
+            line-height: vc(12);
+        }
+    }
+
+    @include devices {
+        margin: vc(31) vc(-30);
+        padding: vc(33) vc(30) vc(24);
     }
 }

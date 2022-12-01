@@ -12,6 +12,17 @@
     &-right {
         display: flex;
         align-items: center;
+
+        @include devices {
+            flex-wrap: wrap;
+            margin-left: auto;
+
+            .is-home & {
+                margin-left: 0;
+                margin-top: vc(36);
+                margin-bottom: vc(41);
+            }
+        }
     }
 
     &-logo {
@@ -22,6 +33,13 @@
 
         .is-home & {
             color: $color-white;
+        }
+
+        @include devices {
+            position: relative;
+            left: vc(-8);
+            width: vc(164);
+            height: vc(56.42);
         }
     }
 
@@ -41,16 +59,38 @@
             width: vc(21.45);
 
             height: vc(20.5);
+
+            @include devices {
+                width: vc(14.89);
+                height: vc(14.24);
+            }
         }
 
         .is-home & {
             display: block;
+        }
+
+        @include devices {
+            margin-left: vc(5);
+            margin-right: 0;
+            width: vc(165);
+            font-size: vc(16.8621);
+            line-height: vc(21);
+
         }
     }
 
     &-social {
         display: flex;
         align-items: center;
+
+        @include devices {
+            display: none;
+
+            .is-home & {
+                display: flex;
+            }
+        }
     }
 
     &-link {
@@ -61,11 +101,26 @@
             margin-right: vc(46.61);
             width: vc(52.86);
             height: vc(52.86);
+
+            @include devices {
+                margin-right: vc(21);
+                width: vc(41);
+                height: vc(41);
+            }
         }
 
         &--fb {
             width: vc(54);
             height: vc(54);
+
+            @include devices {
+                width: vc(42);
+                height: vc(42);
+            }
+        }
+
+        @include devices {
+            margin-right: vc(21);
         }
     }
 
@@ -87,6 +142,21 @@
         @include desktop {
             &:hover {
                 background: $color-brown;
+            }
+        }
+
+        @include devices {
+            display: none;
+            margin-right: 0;
+            margin-left: -1px;
+            border-width:  1.54377px;
+            padding: vc(12) vc(28);
+            font-size: vc(13);
+            line-height: vc(16);
+
+            .is-home & {
+                display: inline-block;
+                flex-shrink: 0;
             }
         }
     }
@@ -112,6 +182,21 @@
                 background: $color-theme;
             }
         }
+
+        @include devices {
+            display: none;
+            margin-right: 0;
+            margin-top: vc(16);
+            padding: vc(12) vc(28);
+            width: 100%;
+            font-weight: 400;
+            font-size: vc(13);
+            line-height: vc(16);
+
+            .is-home & {
+                display: inline-block;
+            }
+        }
     }
 
     &-burger {
@@ -126,10 +211,14 @@
             display: block;
             border-radius: 5px;
             margin: vc(15.5) 0;
-            width: vc(58);
+            width: 100%;
             height: vc(4);
             background-color: currentColor;
             transition: $duration-normal;
+
+            @include devices {
+                margin: vc(9.5) 0;
+            }
         }
 
         @include active {
@@ -142,6 +231,26 @@
                     transform: translate(0, vc(-6)) rotate(45deg);
                 }
             }
+        }
+
+        @include devices {
+            margin-top: vc(8);
+            margin-bottom: 0;
+            width: vc(41);
+
+            .is-home & {
+                display: none;
+            }
+        }
+    }
+
+    @include devices {
+        flex-wrap: wrap;
+        padding-top: vc(37);
+        justify-content: stretch;
+
+        .is-home & {
+            padding-top: vc(15);
         }
     }
 }

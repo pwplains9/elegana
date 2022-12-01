@@ -4,15 +4,26 @@
     background: $color-theme;
 
     &-top {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
+       @include desktop {
+           display: flex;
+           align-items: center;
+           justify-content: space-between;
+
+       }
     }
 
     &-logo {
         display: block;
         width: vc(181);
         height: vc(68.87);
+
+        @include devices {
+            position: relative;
+            margin-bottom: vc(34);
+            left: vc(-4);
+            width: vc(164);
+            height: vc(60.42);
+        }
     }
 
     &-social {
@@ -33,11 +44,26 @@
             margin-right: vc(32);
             width: vc(37.2);
             height: vc(37.2);
+
+            @include devices {
+                margin-right: vc(21);
+                width: vc(41);
+                height: vc(41);
+            }
         }
 
         &--fb {
             width: vc(38);
             height: vc(38);
+
+            @include devices {
+                width: vc(42);
+                height: vc(42);
+            }
+        }
+
+        @include devices {
+            margin-right: vc(21);
         }
     }
 
@@ -60,12 +86,21 @@
                 background: $color-brown;
             }
         }
+
+        @include devices {
+
+            margin-right: 0;
+            margin-left: -1px;
+            border-width:  1.54377px;
+            padding: vc(12) vc(28);
+            font-size: vc(13);
+            line-height: vc(16);
+
+        }
     }
 
     &-links {
-        margin-top: vc(63);
-        margin-bottom: vc(24);
-        width: vc(1066);
+
 
         ul {
             display: flex;
@@ -74,8 +109,15 @@
         }
 
         li {
-            margin-bottom: vc(26);
-            width: 25%;
+           @include desktop {
+               margin-bottom: vc(26);
+               width: 25%;
+           }
+
+            @include devices {
+                margin-bottom: vc(17);
+                width: 50%;
+            }
         }
 
         a {
@@ -85,6 +127,22 @@
             letter-spacing: 0.1em;
             text-transform: uppercase;
             color: $color-brown;
+
+            @include devices {
+                font-size: vc(13);
+                line-height: vc(16);
+            }
+        }
+
+        @include desktop {
+            margin-top: vc(63);
+            margin-bottom: vc(24);
+            width: vc(1066);
+        }
+
+        @include devices {
+            margin-top: vc(38);
+            margin-bottom: vc(22);
         }
     }
 
@@ -96,6 +154,11 @@
         font-size: vc(16);
         line-height: vc(20);
         color: $color-white;
+
+        @include devices {
+            font-size: vc(12);
+            line-height: vc(15);
+        }
     }
 
     &-conf {
@@ -109,6 +172,23 @@
             margin-right: vc(15);
             width: vc(49.98);
             height: vc(36.52);
+
+            @include devices {
+                margin-right: vc(9);
+                width: vc(33);
+                height: vc(24);
+            }
         }
+
+        @include devices {
+            span {
+                white-space: nowrap;
+            }
+        }
+    }
+
+    @include devices {
+        padding-top: vc(28);
+        padding-bottom: vc(44);
     }
 }

@@ -5,10 +5,9 @@
         position: relative;
         display: flex;
         justify-content: flex-end;
-        margin-bottom: vc(288);
-        padding: vc(102) vc(140) vc(101) 0;
+
         color: $color-theme;
-        background: $color-item-card;
+
         transition: all 0.5s linear;
 
         .process-svg--1,
@@ -45,27 +44,40 @@
         //}
 
         &:nth-child(2n - 1) {
-            .process-content {
-                padding-left: vc(255);
+            @include desktop {
+                .process-content {
+                    padding-left: vc(255);
+                }
             }
         }
 
         &:nth-child(2n) {
-            justify-content: flex-start;
+           @include desktop {
+               justify-content: flex-start;
 
-            .process-img {
-                left: auto;
-                right: 0;
-            }
+               .process-img {
+                   left: auto;
+                   right: 0;
+               }
 
-            .process-content {
-                padding-right: vc(140);
+               .process-content {
+                   padding-right: vc(140);
+               }
+           }
+
+            @include devices {
+                .process-content {
+                    margin-left: vc(-30);
+                }
+                .process-img {
+                    margin-left: vc(0);
+                }
             }
         }
 
         &.is-inview{
             color: $color-white;
-            background: $color-brown;
+
 
             rect, circle, path {
                 stroke: $color-white;
@@ -80,12 +92,32 @@
             [cx="84.5"] {
                 fill: $color-brown !important;
             }
+
+            @include desktop {
+                background: $color-brown;
+            }
+
+            @include devices {
+                .process-content {
+                    background: $color-brown;
+                }
+            }
+        }
+
+        @include desktop {
+            margin-bottom: vc(288);
+            padding: vc(102) vc(140) vc(101) 0;
+            background: $color-item-card;
+        }
+
+        @include devices {
+            display: block;
+            margin-bottom: vc(30);
         }
     }
 
     &-img {
-        position: absolute;
-        left: 0;
+
         bottom: vc(101);
         width: vc(810);
         height: vc(575);
@@ -98,47 +130,105 @@
             height: 130%;
             object-fit: cover;
         }
+
+        @include desktop {
+            position: absolute;
+            left: 0;
+        }
+
+        @include devices {
+            margin-left: vc(-30);
+            flex-shrink: 0;
+            width: 345px;
+            height: 221px;
+        }
     }
 
     &-content {
-        padding-left: vc(140);
-        width: vc(810);
+        @include desktop {
+            padding-left: vc(140);
+            width: vc(810);
+        }
+
+        @include devices {
+            padding: 50px 29px 25px;
+
+            margin-top: vc(-30);
+            width: 110%;
+            background: $color-item-card;
+            transition: all 0.5s linear;
+        }
     }
 
     &-svg {
         &--1 {
             width: vc(100.38);
             height: vc(84);
+
+            @include devices {
+                width: 65px;
+                height: 55px;
+            }
         }
 
         &--2 {
             width: vc(124.38);
             height: vc(53);
+
+            @include devices {
+                width: 84.49px;
+                height: 36px;
+            }
         }
 
         &--3 {
             width: vc(108);
             height: vc(90);
+
+            @include devices {
+                width: 63.6px;
+                height: 53px;
+            }
         }
 
         &--4 {
             width: vc(101.38);
             height: vc(106);
+
+            @include devices {
+                width: 65.04px;
+                height: 68px;
+            }
         }
 
         &--5 {
             width: vc(115.8);
             height: vc(113.97);
+
+            @include devices {
+                width: 70px;
+                height: 68.9px;
+            }
         }
 
         &--6 {
             width: vc(127.38);
             height: vc(115.29);
+
+            @include devices {
+                width: 72.14px;
+                height: 65.29px;
+            }
         }
 
         &--7 {
             width: vc(87.66);
             height: vc(129.2);
+
+            @include devices {
+                width: 50px;
+                height: 73.69px;
+            }
         }
     }
 
@@ -150,6 +240,12 @@
         line-height: vc(16);
         letter-spacing: 0.1em;
         text-transform: uppercase;
+
+        @include devices {
+            margin: 26px 0 3px;
+            font-size: vc(12);
+            line-height: vc(15);
+        }
     }
 
     &-title {
@@ -164,11 +260,26 @@
             display: block;
             opacity: 0.5;
         }
+
+        @include devices {
+            margin-bottom: vc(10);
+            font-size: vc(20);
+            line-height: vc(25);
+        }
     }
 
     &-text {
         font-weight: 400;
         font-size: vc(16);
         line-height: vc(20);
+
+        @include devices {
+            font-size: vc(12);
+            line-height: vc(15);
+        }
+    }
+
+    @include devices {
+        margin-top: vc(20);
     }
 }

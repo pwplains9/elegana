@@ -100,7 +100,7 @@ block content
                         | Фотогалерея
             .title
                 | Фотогалерея
-            .gallery
+            .gallery.gallery--portfolio
                 each item, index in dataGallery
                     .gallery-item.anim-fade.anim-fade--childs.js-popup(data-project=`${index + 1}` data-scroll)
                         .gallery-img
@@ -117,4 +117,6 @@ block content
                             !=item.title
                         .text-xs
                             !=item.text
+            .load-more
+                | загрузить ещЁ
         include @components/footer/footer

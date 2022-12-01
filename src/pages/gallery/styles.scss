@@ -1,14 +1,20 @@
 .gallery {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 15px;
+
     margin-top: vc(65);
     margin-bottom: vc(97);
 
     &-item {
         margin: 0 0 28px;
-        width: calc(25% - 15px);
+
         cursor: pointer;
+
+        @include desktop {
+            width: calc(25% - 15px);
+        }
+
+        @include devices {
+            margin: 0 0 vc(31);
+        }
     }
 
     &-img {
@@ -24,7 +30,6 @@
         letter-spacing: 0.1em;
         text-transform: uppercase;
         color: $color-white;
-
         padding: 18px 0 16px;
         border: 2px solid $color-theme;
         background: $color-theme;
@@ -40,6 +45,16 @@
 
     &--portfolio {
         margin-bottom: 37px;
+    }
+
+    @include desktop {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+
+    @include devices {
+        margin-top: vc(29);
     }
 }
 
@@ -104,6 +119,7 @@
     }
 
     &-title {
+        font-family: $HelveticaNW;
         font-weight: 500;
         font-size: vc(32);
         line-height: vc(35);
@@ -169,6 +185,8 @@
             }
         }
     }
+
+
 }
 
 .load-more {
@@ -193,5 +211,14 @@
             color: $color-white;
             background: $color-theme;
         }
+    }
+
+    @include devices {
+        margin: vc(55) auto 57px;
+        border-radius: 4px;
+        padding-top: vc(13);
+        padding-bottom: vc(10);
+        font-size: vc(13);
+        line-height: vc(16);
     }
 }

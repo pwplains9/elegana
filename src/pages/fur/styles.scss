@@ -1,34 +1,52 @@
 .furniture {
-    margin-top: 45px;
+    margin-top: vc(45);
 
     &-item {
-        display: flex;
-        margin-bottom: 251px;
+
+        margin-bottom: vc(251);
 
         &:last-child {
-            margin-bottom: 363px;
+            @include desktop {
+                margin-bottom: vc(363);
+            }
+
+            @include devices {
+                margin-bottom: vc(93);
+            }
         }
 
         &:nth-child(1) {
             .furniture-left {
-                padding-top: 84px;
+                padding-top: vc(84);
+
+                @include devices {
+                    padding-top: vc(31);
+                }
             }
         }
 
         &:nth-child(2n) {
-            margin-bottom: 23px;
+            margin-bottom: vc(23);
 
             .furniture-left {
                 order: 2;
-                margin-top: 120px;
+
+                @include desktop {
+                    margin-top: vc(120);
+                }
             }
 
             .furniture-right {
                 order: 1;
 
+                @include desktop {
+                    .slider {
+                        margin-top: 0;
+                    }
+                }
 
-                .slider {
-                    margin-top: 0;
+                @include devices {
+                    margin-left: vc(-30);
                 }
             }
         }
@@ -44,51 +62,97 @@
                 background: $color-brown;
             }
         }
+
+        @include desktop {
+            display: flex;
+        }
+
+        @include devices {
+            margin-bottom: vc(30);
+
+            &:nth-child(2n) {
+                .furniture-left {
+                    width: 109.5%;
+                }
+            }
+            &:nth-child(2n - 1) {
+                .furniture-left {
+                    margin-left: vc(-30);
+                }
+            }
+        }
     }
 
     &-left {
         border: 1px solid $color-brown;
-        padding: 324px 88px 80px;
-        width: 646.62px;
+
+        @include desktop {
+            padding: vc(324) vc(88) vc(80);
+            width: vc(646.62);
+        }
+
+        @include devices {
+            padding: vc(123) vc(28) vc(81);
+        }
     }
 
     &-right {
+        @include desktop {
 
-        width: 1003.38px;
-        height: 646.62px;
+            width: vc(1003.38);
+            height: vc(646.62);
+        }
     }
 
     &-icon {
-        margin-bottom: 55px;
-        width: 120px;
-        height: 120px;
+        margin-bottom: vc(55);
+        width: vc(120);
+        height: vc(120);
+
+        @include devices {
+            margin-bottom: vc(17);
+            width: vc(75);
+            height: vc(75);
+        }
     }
 
     &-title {
         font-weight: 700;
-        font-size: 32px;
-        line-height: 32px;
+        font-size: vc(32);
+        line-height: vc(32);
         color: $color-brown;
         letter-spacing: 0.1em;
+
+        @include devices {
+            font-size: vc(20);
+            line-height: vc(25);
+        }
     }
 
     &-text {
-        margin-top: 30px;
-        margin-bottom: 55px;
+        margin-top: vc(30);
+        margin-bottom: vc(55);
         font-weight: 400;
-        font-size: 16px;
-        line-height: 20px;
+        font-size: vc(16);
+        line-height: vc(20);
         color: $color-blacks;
+
+        @include devices {
+            margin-top: vc(10);
+            margin-bottom: vc(33);
+            font-size: vc(12);
+            line-height: vc(15);
+        }
     }
 
     &-link {
-        padding: 18px 120px 16px;
+        padding: vc(18) vc(120) vc(16);
         border: 2px solid $color-theme;
         border-radius: 5px;
         background: $color-theme;
         font-weight: 400;
-        font-size: 16px;
-        line-height: 16px;
+        font-size: vc(16);
+        line-height: vc(16);
         color: $color-white;
 
         @include desktop {
@@ -96,11 +160,34 @@
                 background: $color-brown;
             }
         }
+
+        @include devices {
+            padding: vc(12) vc(87) vc(13);
+
+            font-size: vc(13);
+            line-height: vc(16);
+            letter-spacing: 0.1em;
+        }
+    }
+
+    @include devices {
+        margin-top: vc(14);
+
+        .slider {
+            margin-top: vc(-42);
+            width: vc(345);
+            height: vc(240);
+
+            img {
+                width: vc(345);
+                height: vc(240);
+            }
+        }
     }
 }
 
 .slider, .popup {
-    margin-top: 120px;
+    margin-top: vc(120);
     margin-bottom: 0 !important;
 
     &--lg {
@@ -111,12 +198,28 @@
         img {
             border-radius: 20px;
         }
+
+        @include devices {
+            margin: 0 vc(-30) vc(30) !important;
+            border-radius: 5px;
+            height: 500px;
+            .slider-item {
+                img {
+                    border-radius: 5px;
+                    height: 500px;
+                }
+            }
+
+            .slick-dots {
+                bottom: 20px !important;
+            }
+
+        }
     }
 
     &--xs {
         margin: 0;
-        width:
-            vc(401);
+        width: vc(401);
         height: vc(340);
 
         button {
@@ -124,13 +227,27 @@
         }
 
         img {
-            width:
-                vc(401) !important;
+            width: vc(401) !important;
             height: vc(340) !important;
             border-radius: 10px;
         }
 
+        @include devices {
+            width: vc(315);
+            height: vc(274.62);
+
+            img {
+                border-radius: 8.07692px;
+                width: vc(315) !important;
+                height: vc(274.62) !important;
+            }
+
+            .slick-dots {
+                bottom: vc(21) !important;
+            }
+        }
     }
+
     &-item {
         img {
             width: 100%;
@@ -155,11 +272,11 @@
     }
 
     .slick-prev {
-        left: 19px;
+        left: vc(19);
     }
 
     .slick-next {
-        right: 19px;
+        right: vc(19);
     }
 
     .slick-arrow {
@@ -169,6 +286,10 @@
 
         &::before {
             display: none;
+        }
+
+        @include devices {
+            display: none !important;
         }
     }
 
@@ -186,6 +307,16 @@
                 width: 18.58px;
                 background: $color-brown;
             }
+
+            @include devices {
+                width: 4.67px;
+                height: 4px;
+
+                &.slick-active {
+                    width: 12.67px;
+                    height: 4px;
+                }
+            }
         }
 
         button {
@@ -199,13 +330,17 @@
                 display: none;
             }
         }
+
+        @include devices {
+            bottom: 9px;
+        }
     }
 }
 
 
 .reviews-slider {
-    padding-bottom: 66px;
-    margin-bottom: 104px;
+    padding-bottom: vc(66);
+    margin-bottom: vc(104);
 
     .slick-dots {
         bottom: 0;

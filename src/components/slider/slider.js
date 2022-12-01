@@ -1,3 +1,5 @@
+import helpers from "../../scripts/utils/helpers";
+
 const init = () => {
     const furniture = document.querySelectorAll('.slider');
 
@@ -7,6 +9,18 @@ const init = () => {
         const sliders = document.querySelectorAll('.slider');
 
         sliders.forEach((slider) => {
+            if(!helpers.isDevices()) {
+                if($(slider).hasClass('for-devices')) {
+                    return;
+                }
+            }
+
+            if(helpers.isDevices()) {
+                if($(slider).hasClass('for-desktop')) {
+                    return;
+                }
+            }
+
             $(slider).slick({
                 dots: true,
                 infinite: true,
