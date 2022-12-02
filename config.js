@@ -3,7 +3,7 @@ export const config = {
         publicPath: '/test/', // путь к файлам для продакшн версии
         publicPathDev: '/', // путь к файлам для версии разработки
         domain: '/', // домен проекта
-        isProd: () => true, // isProd = true - используется publicPath; isProd = false - используется publicPathDev
+        isProd: () => false, // isProd = true - используется publicPath; isProd = false - используется publicPathDev
     },
     javascript: { // настройки для js
         multipleFiles: false, // разделить импорт файлов из node_modules на отдельные чанки
