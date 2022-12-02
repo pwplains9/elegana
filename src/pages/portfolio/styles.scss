@@ -6,8 +6,11 @@
     }
 
     .slick-slide {
-        margin-right: vc(30);
+        @include desktop {
+            margin-right: vc(30);
+        }
     }
+
     &-item {
 
     }
@@ -22,13 +25,25 @@
                 display: none;
             }
         }
+
+        @include devices {
+            border-radius: 5px;
+            padding: vc(27) vc(27) vc(19);
+        }
     }
 
     &-top {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
         margin-bottom: vc(41);
+
+        @include desktop {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        @include devices {
+            margin-bottom: vc(17);
+        }
     }
 
     &-left {
@@ -49,12 +64,24 @@
             height: 100%;
             object-fit: cover;
         }
+
+        @include devices {
+            margin-right: vc(17);
+            width: vc(59);
+            height: vc(59);
+        }
     }
 
     &-title {
+        font-family: $HelveticaNW;
         font-weight: 500;
         font-size: vc(20);
         line-height: vc(25);
+
+        @include devices {
+            font-size: vc(16);
+            line-height: vc(18);
+        }
     }
 
     &-right {
@@ -63,9 +90,22 @@
 
         a {
             display: block;
-            width: vc(58);
-            height: vc(58);
-            margin-left: vc(20);
+
+            @include desktop {
+                width: vc(58);
+                height: vc(58);
+                margin-left: vc(20);
+            }
+
+            @include devices {
+                margin-right: vc(12);
+                width: vc(34.97);
+                height: vc(34.97);
+            }
+        }
+
+        @include devices {
+            margin-top: vc(14);
         }
     }
 
@@ -76,6 +116,10 @@
             &:last-child {
                 margin-bottom: vc(7);
             }
+
+            @include devices {
+                margin-bottom: vc(11);
+            }
         }
     }
 
@@ -85,5 +129,15 @@
         line-height: vc(20);
         color: $color-theme;
         cursor: pointer;
+
+        @include devices {
+            font-size: vc(12);
+            line-height: vc(15);
+        }
+    }
+
+    @include devices {
+        margin-top: vc(19);
+
     }
 }

@@ -29,7 +29,7 @@ block content
                 | о компании
         .about
             .container
-                .about-card
+                .about-card.about-card--first
                     .about-left
                         .about-img.about-img--1.about-img--50
                             img(src=`${baseDir}assets/images/process/1.jpg` alt='' data-scroll data-scroll-speed="-1.5")
@@ -48,9 +48,9 @@ block content
                             | Европейский минимализм, роскошная классика; функциональная кухня для любителей готовить или стильное пространство для встреч с друзьями? С верхними шкафами или без, с высокими пеналами или вовсе скрытая? Выбирать только вам!
 
             .about-card.about-card--color
-                .container.container--df
+                .container.container--df.about-card--last
                     .about-left
-                        .about-img
+                        .about-img.about-img--lg
                             img(src=`${baseDir}assets/images/process/1.jpg` alt='' data-scroll data-scroll-speed="-1.5")
 
                     .about-right
@@ -65,7 +65,7 @@ block content
                         .text-md
                             | Мы уверены в каждом предмете мебели и готовы воплотить уникальные задумки по индивидуальным заказам.
             .container
-                .about-card
+                .about-card.about-card--last
                     .about-left
                         .about-img.about-img--3
                             img(src=`${baseDir}assets/images/process/1.jpg` alt='' )
@@ -115,7 +115,7 @@ block content
             .container
                 .title.title--white
                     | Команда
-                .gallery
+                .gallery.gallery--company
                     each item, index in dataAbout
                         .gallery-item.gallery-item--company.anim-fade.anim-fade--childs(data-scroll)
                             .gallery-img

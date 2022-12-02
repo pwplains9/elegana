@@ -352,7 +352,7 @@ canvas {
 
         &::after {
             background: url("../assets/images/icon-white.svg") center center no-repeat;
-
+            background-size: contain;
         }
     }
 

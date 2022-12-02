@@ -14,6 +14,17 @@ const init = () => {
                 slidesToShow: 2,
                 slidesToScroll: 1,
                 arrows: false,
+                responsive: [
+                    {
+                        breakpoint: 1024,
+                        settings: {
+                            slidesToShow: 1,
+                            slidesToScroll: 1,
+                            infinite: true,
+                            dots: true
+                        }
+                    },
+                ]
             });
         });
 
@@ -22,7 +33,7 @@ const init = () => {
             const text = item.querySelectorAll('.text');
             console.log(text.length)
 
-            if(text.length > 2) {
+            if (text.length > 2) {
                 text.forEach((textItem) => {
                     textItem.classList.add('is-hidden')
 
@@ -33,7 +44,7 @@ const init = () => {
 
             buttonMore.addEventListener('click', (event) => {
                 const el = event.currentTarget.closest('.reviews-card');
-                if(!el.classList.contains('is-open')) {
+                if (!el.classList.contains('is-open')) {
                     el.classList.add('is-open');
 
                     text.forEach((textItem) => {

@@ -6,12 +6,22 @@
     &-left {
 
     }
+
+    &-info {
+        margin-top: vc(26);
+    }
     &-title {
         margin-bottom: vc(12);
         font-weight: 500;
         font-size: vc(20);
         line-height: vc(25);
         color: $color-brown;
+
+        @include devices {
+            margin-bottom: vc(5);
+            font-size: vc(16);
+            line-height: vc(20);
+        }
     }
 
     &-text {
@@ -19,6 +29,12 @@
         font-weight: 400;
         font-size: vc(16);
         line-height: vc(20);
+
+        @include devices {
+            margin-bottom: vc(20);
+            font-size: vc(12);
+            line-height: vc(15);
+        }
     }
 
     &-links {
@@ -28,12 +44,19 @@
             font-weight: 400;
             font-size: vc(16);
             line-height: vc(20);
+
+            @include devices {
+                font-size: vc(12);
+                line-height: vc(15);
+            }
         }
     }
 
     &-right {
-        margin-left: vc(170);
-        width: vc(1090);
+      @include desktop {
+          margin-left: vc(170);
+          width: vc(1090);
+      }
     }
 
     &-button {
@@ -57,13 +80,38 @@
                 color: $color-brown;
             }
         }
+
+        @include devices {
+            margin-top: vc(20);
+            border-radius: 4px;
+            padding: vc(13) 0 vc(10);
+            width: 100%;
+            font-size: vc(13);
+            line-height: vc(16);
+        }
+    }
+
+    @include devices {
+        display: block;
+        margin-bottom: 0;
     }
 }
 
 .map {
    iframe {
-       border-radius: 20px;
-       width: vc(1090);
-       height: vc(573);
+       @include desktop {
+           border-radius: 20px;
+           width: vc(1090);
+           height: vc(573);
+
+       }
+       @include devices {
+           width: vc(375);
+           height: vc(500);
+       }
    }
+
+    @include devices {
+        margin: vc(26) vc(-30) 0;
+    }
 }

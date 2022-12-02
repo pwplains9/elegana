@@ -9,23 +9,32 @@
 
     &:nth-child(2n - 1) {
         .about-right {
-            margin-left: vc(142);
-
+            @include desktop {
+                margin-left: vc(142);
+            }
         }
     }
 
     &:nth-child(2n) {
-        .about-right {
-            order: 1;
+        @include desktop {
+            .about-right {
+                order: 1;
+            }
         }
 
         .about-left {
-            padding-left: vc(158);
+
             order: 2;
+
+            @include desktop {
+                padding-left: vc(158);
+            }
         }
 
-        .about-img {
-            width: vc(950);
+        @include desktop {
+            .about-img {
+                width: vc(950);
+            }
         }
 
         .about-number {
@@ -43,6 +52,10 @@
     .title-md {
         margin-top: vc(27);
         margin-bottom: vc(43);
+
+        @include devices {
+            margin: vc(16) 0 vc(22);
+        }
     }
 
     .text-md {
@@ -52,6 +65,33 @@
 
         &:last-child {
             margin-bottom: 0;
+        }
+
+        @include devices {
+            font-size: vc(12);
+            line-height: vc(15);
+        }
+    }
+
+    @include devices {
+        flex-flow: column;
+        padding-top: vc(47);
+        padding-bottom: vc(41);
+
+        &--last {
+            .about-right {
+                order: 1;
+            }
+
+            .about-left {
+                order: 2;
+            }
+        }
+
+        &--first {
+            .about-right {
+                margin-top: vc(114);
+            }
         }
     }
 }
@@ -73,16 +113,30 @@
         &--1 {
             position: relative;
             top: vc(-57);
+
+            @include devices {
+                top: vc(-84);
+            }
         }
 
         &--2 {
             position: relative;
             right: vc(29);
+
+            @include devices {
+                right: vc(147);
+                top: vc(89);
+            }
         }
 
         &--50 {
             width: vc(420);
             height: vc(482);
+
+            @include devices {
+                width: 231px;
+                height: 258px;
+            }
         }
 
 
@@ -90,13 +144,33 @@
             margin-right: vc(31);
             width: vc(389);
             height: vc(559);
+
+            @include devices {
+                margin-right: vc(20);
+                margin-top: vc(33);
+                width: vc(148);
+                height: vc(216);
+            }
         }
 
         &--4 {
             width: vc(389);
             height: vc(559);
+
+            @include devices {
+                margin-top: vc(33);
+                width: vc(148);
+                height: vc(216);
+            }
         }
 
+        @include devices {
+            &--lg {
+                margin-top: vc(22);
+                width: vc(315);
+                height: vc(335);
+            }
+        }
     }
 
     &-right {
@@ -116,6 +190,19 @@
 
         span {
             color: $color-brown;
+        }
+
+        @include devices {
+            font-size: vc(30);
+            line-height: vc(37);
+        }
+    }
+
+    @include devices {
+        margin-top: vc(61);
+
+        .container {
+            flex-flow: column;
         }
     }
 }
@@ -140,5 +227,9 @@
             height: 100%;
             object-fit: cover;
         }
+    }
+
+    @include devices {
+        padding-top: 32px;
     }
 }

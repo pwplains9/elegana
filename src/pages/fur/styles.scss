@@ -202,11 +202,11 @@
         @include devices {
             margin: 0 vc(-30) vc(30) !important;
             border-radius: 5px;
-            height: 500px;
+            height: vc(500);
             .slider-item {
                 img {
                     border-radius: 5px;
-                    height: 500px;
+                    height: vc(500);
                 }
             }
 
@@ -268,6 +268,12 @@
         img {
             width: vc(1009);
             height: vc(589);
+        }
+
+        @include devices {
+            border-radius: 5px;
+            width: vc(315);
+            height: vc(339);
         }
     }
 

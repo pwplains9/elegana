@@ -13,6 +13,7 @@
         }
 
         @include devices {
+            width: 100%;
             margin: 0 0 vc(31);
         }
     }
@@ -30,7 +31,7 @@
         letter-spacing: 0.1em;
         text-transform: uppercase;
         color: $color-white;
-        padding: 18px 0 16px;
+        padding: vc(18) 0 vc(16);
         border: 2px solid $color-theme;
         background: $color-theme;
         border-radius: 10px;
@@ -40,6 +41,13 @@
             &:hover {
                 background: $color-brown;
             }
+        }
+
+        @include devices {
+            border-radius: 4px;
+            padding: vc(13) 0 vc(10);
+            font-size: vc(13);
+            line-height: vc(16);
         }
     }
 
@@ -55,6 +63,45 @@
 
     @include devices {
         margin-top: vc(29);
+    }
+
+    @include devices {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 15px;
+
+        &--company {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 0;
+            margin-bottom: vc(20);
+
+            .gallery-item {
+                margin-bottom: vc(10);
+                width: calc(50% - 10px);
+
+                .gallery-img {
+                    width: vc(148);
+                    height: vc(135);
+
+                    img {
+                        border-radius: 4px;
+                    }
+                }
+
+                .title-xs {
+                    margin: vc(10) 0 -1px;
+                    font-size: vc(16);
+                    line-height: vc(18);
+                }
+
+                .text-xs {
+                    font-size: vc(10);
+                    line-height: vc(12);
+                }
+            }
+        }
     }
 }
 
@@ -72,6 +119,11 @@
     height: var(--vh);
     margin-top: 0 !important;
 
+    @include devices {
+        display: block;
+        overflow-y: auto;
+    }
+
     &-bg {
         position: fixed;
         left: 0;
@@ -85,11 +137,23 @@
     &-content {
         position: relative;
         z-index: 2;
-        display: flex;
-        padding: vc(107) vc(111);
-        width: vc(1650);
-        background: #FFFFFF;
+
+        background: $color-white;
         border-radius: 20px;
+
+        @include desktop {
+            display: flex;
+            padding: vc(107) vc(111);
+            width: vc(1650);
+        }
+
+        @include devices {
+            margin-top: vc(44);
+            margin-bottom: vc(44);
+            border-radius: 10px 10px 0px 0px;
+            padding: vc(29) vc(30) vc(30);
+            width: 100%;
+        }
     }
 
     &-left {
@@ -98,11 +162,13 @@
 
     &-right {
         position: relative;
-        display: flex;
-        flex-flow: column;
-        justify-content: flex-end;
-        width: 100%;
-        margin-left: vc(110);
+        @include desktop {
+            display: flex;
+            flex-flow: column;
+            justify-content: flex-end;
+            width: 100%;
+            margin-left: vc(110);
+        }
     }
 
     &-close {
@@ -112,6 +178,11 @@
         width: vc(25.16);
         height: vc(25.16);
         cursor: pointer;
+
+        @include devices {
+            width: vc(20);
+            height: vc(20);
+        }
     }
 
     &-right {
@@ -124,6 +195,13 @@
         font-size: vc(32);
         line-height: vc(35);
         color: $color-theme;
+
+        @include devices {
+            width: 90%;
+            font-size: vc(24);
+            line-height: vc(26);
+            word-break: break-word;
+        }
     }
 
     &-number {
@@ -133,10 +211,19 @@
         font-size: vc(16);
         line-height: vc(20);
         color: #ADADAD;
+
+        @include devices {
+            margin-top: vc(6);
+            margin-bottom: vc(20);
+            font-size: vc(12);
+            line-height: vc(15);
+        }
     }
 
     &-info {
-
+        @include devices {
+            margin-top: vc(21);
+        }
     }
 
     &-line {
@@ -148,6 +235,10 @@
         &:last-child {
             margin-bottom: 0;
         }
+
+        @include devices {
+            margin-bottom: vc(4);
+        }
     }
 
     &-param {
@@ -155,12 +246,21 @@
         font-size: vc(16);
         line-height: vc(20);
 
+        @include devices {
+            font-size: vc(12);
+            line-height: vc(15);
+        }
     }
 
     &-value {
         font-weight: 500;
         font-size: vc(20);
         line-height: vc(25);
+
+        @include devices {
+            font-size: vc(12);
+            line-height: vc(15);
+        }
     }
 
     &-button {
@@ -183,6 +283,15 @@
             &:hover {
                 background: $color-brown;
             }
+        }
+
+        @include devices {
+            margin-top: vc(12);
+            border-radius: 4px;
+            padding-top: vc(13);
+            padding-bottom: vc(10);
+            font-size: 13px;
+            line-height: 16px;
         }
     }
 
