@@ -375,6 +375,22 @@ canvas {
         margin-bottom: vc(20);
     }
 
+    &-form {
+        margin: vc(7) auto 0;
+        width: vc(455);
+        font-weight: 500;
+        font-size: vc(20);
+        line-height: vc(25);
+        color: $color-white;
+
+        @include devices {
+            width: vc(275);
+            margin-top: vc(7);
+            font-size: vc(12);
+            line-height: vc(15);
+        }
+    }
+
     &-md {
         font-size: vc(14);
         line-height: vc(17);

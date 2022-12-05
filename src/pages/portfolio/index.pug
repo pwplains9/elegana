@@ -16,6 +16,42 @@ append vars
         - meta[metaKey] = metaValue
 
 block content
+    .popup-form.is-hidden(data-item="lead-form")
+        .popup-form-bg
+        .popup-form-content.is-hidden
+            .form
+
+                .title-md.title-white
+                    | Оставьте свои#[br] контакты,#[br] и мы рассчитаем стоимость#[br] проекта для вас
+                    .popup-form-close
+                        <svg width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12.5808 10.1823L2.39851 0L0 2.39851L10.1823 12.5808L0 22.7632L2.39851 25.1617L12.5808 14.9794L22.7632 25.1617L25.1617 22.7632L14.9794 12.5808L25.1617 2.39851L22.7632 1.3487e-06L12.5808 10.1823Z" fill="white"/>
+                        </svg>
+                .form-input
+                    input(placeholder="Имя и фамилия")
+                .form-container
+                    .form-input
+                        input(placeholder="Номер телефона")
+                    .form-input
+                        input(placeholder="E-mail")
+
+                .form-textarea
+                    textarea(placeholder="Комментарий")
+                button.form-button(type="submit") отправить
+                .form-text
+                    | Нажимая кнопку «Отправить», вы соглашаетесь с #[a(href="") политикой конфиденциальности]
+                .form-success.is-hidden
+                    .form-success-svg
+                        <svg width="146" height="146" viewBox="0 0 146 146" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M145.5 73C145.5 113.041 113.041 145.5 73 145.5C32.9594 145.5 0.5 113.041 0.5 73C0.5 32.9594 32.9594 0.5 73 0.5C113.041 0.5 145.5 32.9594 145.5 73Z" fill="transparent" stroke="white"/>
+                        <path d="M140.496 72.8116V73.1258C103.449 73.3936 73.452 103.399 73.1847 140.493H72.8704C72.6029 103.399 42.5951 73.3933 5.50781 73.1258V72.8116C42.6046 72.5442 72.6025 42.5395 72.8703 5.50488H73.1847C73.4525 42.549 103.46 72.5438 140.496 72.8116Z" fill="transparent" stroke="white"/>
+                        </svg>
+
+                    .title-md.title-white
+                        | Заявка отправлена!
+                    .text-form
+                        | Мы свяжемся с вами в кратчайшие сроки, обсудим детали и договоримся о дате выезда на бесплатный замер
+
     .site(data-scroll-container)
         include @components/header/header
         -
@@ -70,13 +106,13 @@ block content
                         .gallery-img
                             .slider.slider--1.slider--xs
                                 .slider-item
-                                    img(src=`${baseDir}assets/images/furniture/1.jpg` alt='')
+                                    img(src=`${baseDir}assets/images/project.jpg` alt='')
                                 .slider-item
-                                    img(src=`${baseDir}assets/images/furniture/1.jpg` alt='')
+                                    img(src=`${baseDir}assets/images/project.jpg` alt='')
                                 .slider-item
-                                    img(src=`${baseDir}assets/images/furniture/1.jpg` alt='')
+                                    img(src=`${baseDir}assets/images/project.jpg` alt='')
                                 .slider-item
-                                    img(src=`${baseDir}assets/images/furniture/1.jpg` alt='')
+                                    img(src=`${baseDir}assets/images/project.jpg` alt='')
                         .title-xs
                             !=item.title
                         .text-xs

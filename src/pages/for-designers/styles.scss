@@ -178,9 +178,41 @@
         color: $color-white;
         text-align: center;
 
+        a {
+            text-decoration: underline;
+        }
+
         @include devices {
             font-size: vc(10);
             line-height: vc(12);
+        }
+    }
+
+    &-success {
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        display: flex;
+        flex-flow: column;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 100%;
+        text-align: center;
+        background: $color-brown;
+
+        &-svg {
+            margin: 0 auto vc(101);
+            width: vc(146);
+            height: vc(146);
+
+            @include devices {
+                margin-bottom: vc(58);
+                width: vc(110);
+                height: vc(110);
+            }
         }
     }
 

@@ -5,7 +5,7 @@
             <path d="M240 240L0 240L0 0C132.455 0 240 107.537 240 240Z" fill="#B48C45"/>
             </svg>
 
-        a.index-item(href='#')
+        a.index-item(href=`${baseDir}portfolio`)
             .index-item--content
                 .index-item--front
                     | ПРОЕКТЫ
@@ -14,10 +14,10 @@
                 .index-item--side
                     | Никакой оклейки!
                     | Только крашеные фасады
-        a.index-item.for-devices
+        //a.index-item.for-devices
         .index-item
             img(src=`${baseDir}assets/images/index/1.jpg` alt='')
-        a.index-item(href="#").for-desktop
+        a.index-item(href=`${baseDir}for-designers`)
             .index-item--content
                 .index-item--front
                     | ДИЗАЙНЕРАМ
@@ -26,7 +26,7 @@
                     | Только крашеные фасады
         .index-item
             img(src=`${baseDir}assets/images/index/2.jpg` alt='')
-        a.index-item(href="#")
+        a.index-item(href=`${baseDir}furniture`)
             .index-item--content
                 .index-item--front
                     | ДРУГАЯ
@@ -40,7 +40,7 @@
         .index-item.for-desktop
             img(src=`${baseDir}assets/images/index/3.jpg` alt='')
         .index-item.index-item--beige.for-desktop
-        a.index-item(href="#")
+        a.index-item(href=`${baseDir}about`)
             .index-item--content
                 .index-item--front
                     | О КОМПАНИИ
@@ -52,7 +52,7 @@
             <path d="M240 240L240 6.65207e-05L7.32091e-06 0.000107374C3.11088e-05 132.455 107.537 240 240 240Z" fill="#B48C45"/>
             </svg>
 
-        a.index-item(href="#")
+        a.index-item(href=`${baseDir}process-page`)
             .index-item--content
                 .index-item--front
                     | ЭТАПЫ
@@ -64,7 +64,7 @@
         .index-item
             img(src=`${baseDir}assets/images/index/4.jpg` alt='')
 
-        a.index-item(href="#")
+        a.index-item(href=`${baseDir}gallery`)
             .index-item--content
                 .index-item--front
                     | ФОТОГАЛЕРЕЯ
