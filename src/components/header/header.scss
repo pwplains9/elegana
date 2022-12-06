@@ -27,11 +27,16 @@
 
     &-logo {
         display: block;
+        flex-shrink: 0;
         width: vc(181);
         height: vc(68.87);
         color: $color-theme;
 
         .is-home & {
+            color: $color-white;
+        }
+
+        &--white {
             color: $color-white;
         }
 
@@ -200,6 +205,7 @@
     }
 
     &-burger {
+        flex-shrink: 0;
         z-index: 100;
         flex-direction: column;
         margin: vc(-6.5 * 0.5) 0;
@@ -272,15 +278,20 @@
 .menu {
     position: absolute;
     right: 0;
-    top: vc(240);
+    top: 0;
     z-index: 2;
-
+    width: 65%;
     height: 100%;
     background: $color-theme;
     transform: translateX(150%);
     transition: all 0.5s cubic-bezier(0.45, 0.05, 0.55, 0.95);
-
+    .header-burger {
+        margin-left: 0;
+    }
     ul {
+        padding-top: vc(61);
+        flex: 1;
+
         li {
             margin-bottom: vc(38);
             text-align: right;
@@ -306,10 +317,38 @@
         }
     }
 
+    &-center {
+        display: flex;
+        margin-top: vc(88);
+
+        @include desktop {
+            padding-right: 11%;
+        }
+
+        @include devices {
+            margin-top: vc(47);
+        }
+    }
+
+    &-cards {
+        display: flex;
+        flex-wrap: wrap;
+        width: 64.7%;
+
+        .index-item {
+            width: calc(100% / 3);
+        }
+    }
+
     @include desktop {
-        padding-right: vc(135);
-        padding-top: vc(73);
-        padding-left: vc(92);
+
+        padding-top: vc(82);
+
+        .header-right {
+            padding-left: vc(158);
+            padding-right: vc(136);
+            justify-content: flex-end;
+        }
     }
 
     &.is-active {
@@ -318,7 +357,57 @@
 
     @include devices {
         left: 0;
-        top: vc(120);
-        padding-top: vc(48);
+        right: 0;
+        top: 0;
+        padding-top: vc(30);
+        width: 100%;
+
+        .header-social {
+            display: flex;
+            order: 2;
+        }
+
+        .header-number,
+        .header-bcalc{
+            display: inline-block;
+        }
+
+        .header-number {
+            order: 3;
+        }
+
+        .header-bcalc{
+            order: 4;
+        }
+
+        ul {
+            order: 1;
+            padding-top: 0;
+        }
+
+        &-top {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            padding: 0 vc(30);
+        }
+
+        &-center {
+            flex-flow: column;
+        }
+
+        &-cards {
+            width: 100%;
+            order: 2;
+            margin-top: vc(16);
+        }
+
+        .header-burger {
+            order: 1;
+        }
+
+        .header-right.for-devices {
+            margin-top: vc(30);
+        }
     }
 }

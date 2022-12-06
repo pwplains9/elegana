@@ -48,11 +48,11 @@ function toggleMenu(event) {
 	event.preventDefault();
 	event.stopPropagation();
 
-	if ($(event.currentTarget).hasClass('is-active')) {
-		$(event.currentTarget).removeClass('is-active');
+	if ($('.js-burger').hasClass('is-active')) {
+        $('.js-burger').removeClass('is-active');
 		closeMenu();
 	} else {
-		$(event.currentTarget).addClass('is-active');
+        $('.js-burger').addClass('is-active');
 		openMenu();
 	}
 }
@@ -60,10 +60,10 @@ function toggleMenu(event) {
 function init() {
 	helpers.$header = $('.header');
 
-	$('.js-burger').on('click.header', toggleMenu);
+	$('.js-burger').on('click', toggleMenu);
 
 	helpers.$document
-		.on('click.header', (e) => {
+		.on('click', (e) => {
 			let $container = $('.menu');
 
 			if ($container.is(e.target) && $container.has(e.target).length === 0 && $container.hasClass('is-active')) {
@@ -71,7 +71,7 @@ function init() {
 				$('.js-burger').removeClass('is-active');
 			}
 		})
-		.on('keyup.header', (e) => {
+		.on('keyup', (e) => {
 			if ((e.key === 'Escape' || e.key === 'Esc') && $('.menu').hasClass('is-active')) {
 				closeMenu();
 				$('.js-burger').removeClass('is-active');
