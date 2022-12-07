@@ -114,6 +114,10 @@ const isScrollUnlocked = () => {
     scroller.start();
 }
 
+const isScrollUpdate = () => {
+    scroller.update();
+}
+
 export default {
     init,
     onScroll,
@@ -122,5 +126,6 @@ export default {
     getInstance,
     getElement,
     isScrollLocked,
-    isScrollUnlocked
+    isScrollUnlocked,
+    isScrollUpdate,
 };

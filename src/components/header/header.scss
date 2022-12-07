@@ -345,14 +345,18 @@
         padding-top: vc(82);
 
         .header-right {
-            padding-left: vc(158);
-            padding-right: vc(136);
+            //padding-left: 10%;
+            padding-right: 11%;
             justify-content: flex-end;
         }
     }
 
     &.is-active {
         transform: translateX(0);
+    }
+
+    @include desktop {
+        width: vc(1245);
     }
 
     @include devices {

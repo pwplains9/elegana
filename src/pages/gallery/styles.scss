@@ -5,8 +5,11 @@
 
     &-item {
         margin: 0 0 28px;
-
         cursor: pointer;
+
+        a {
+            display: block;
+        }
 
         @include desktop {
             width: calc(25% - 15px);

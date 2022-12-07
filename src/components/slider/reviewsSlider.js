@@ -1,3 +1,5 @@
+import scroller from "../scroller/scroller";
+
 const init = () => {
     const furniture = document.querySelectorAll('.reviews');
 
@@ -49,7 +51,7 @@ const init = () => {
 
                     text.forEach((textItem) => {
                         textItem.classList.remove('is-hidden')
-
+                        scroller.isScrollUpdate();
                     })
                 }
             });

@@ -103,7 +103,7 @@ block content
             .gallery.gallery--portfolio
                 each item, index in dataPortfolio
                     .gallery-item(data-project=index + 1)
-                        .gallery-img
+                        a.gallery-img(href=`${baseDir}project`)
                             .slider.slider--1.slider--xs
                                 .slider-item
                                     img(src=`${baseDir}assets/images/project.jpg` alt='')
@@ -113,11 +113,11 @@ block content
                                     img(src=`${baseDir}assets/images/project.jpg` alt='')
                                 .slider-item
                                     img(src=`${baseDir}assets/images/project.jpg` alt='')
-                        .title-xs
+                        a.title-xs(href=`${baseDir}project`)
                             !=item.title
-                        .text-xs
+                        a.text-xs(href=`${baseDir}project`)
                             !=item.text
-                        .gallery-link
+                        .gallery-link.js-popup-forms(data-popup="lead-form")
                             | рассчитать стоимость
             .load-more
                 | загрузить ещЁ
