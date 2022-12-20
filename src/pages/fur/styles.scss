@@ -146,6 +146,7 @@
     }
 
     &-link {
+        display: inline-block;
         padding: vc(18) vc(120) vc(16);
         border: 2px solid $color-theme;
         border-radius: 5px;

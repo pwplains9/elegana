@@ -71,6 +71,10 @@ const init = () => {
         return;
     }
 
+    if(helpers.isMobile) {
+        $('.about-card--first').removeAttr('data-scroll')
+    }
+
     const isDevices = helpers.isDevices();
 
     scroller = new LocomotiveScroll({
@@ -85,7 +89,7 @@ const init = () => {
             smooth: true,
         },
         smartphone: {
-            smooth: true,
+            smooth: false,
         },
     });
 
@@ -97,9 +101,11 @@ const init = () => {
         }
     }, 250));
 
-   setTimeout(() => {
-       scroller.update();
-   }, 500)
+    toTop();
+
+    setTimeout(() => {
+        scroller.update();
+    }, 500)
 
     if (helpers.isScrollLocked()) {
         scroller.stop();
@@ -116,6 +122,32 @@ const isScrollUnlocked = () => {
 
 const isScrollUpdate = () => {
     scroller.update();
+}
+
+const scrollToEl = (el) => {
+    scroller.scrollTo(el);
+}
+
+const toTop = () => {
+    let header = document.querySelector('.header');
+    let button = document.querySelector('.to-top');
+
+
+    if($('.index').length) {
+        return;
+    }
+
+    button.addEventListener('click', () => {
+        scrollToEl(header);
+    });
+
+    onScroll(_throttle((e) => {
+        if (e.scroll.y > ((e.limit.y * 30) / 100)) {
+            button.classList.add('is-view');
+        } else {
+            button.classList.remove('is-view');
+        }
+    }, 250));
 }
 
 export default {

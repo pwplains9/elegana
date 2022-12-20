@@ -7,6 +7,11 @@
         --width-current: 100vw;
     }
 
+    @include laptop-h {
+        --width-base: 950;
+        --width-current: 100vh;
+    }
+
     @include devices {
         --width-base: #{$mobile};
         --width-current: 100vmin;
@@ -40,9 +45,6 @@ html {
 }
 
 body {
-    position: fixed;
-    left: 0;
-    top: 0;
     width: 100%;
     height: 100%;
     -webkit-font-smoothing: antialiased;
@@ -52,10 +54,21 @@ body {
     -webkit-tap-highlight-color: transparent;
     font-family: $Helvetica;
 
-    &.is-home {
+    @include desktop {
         position: fixed;
         left: 0;
         top: 0;
+
+        &.is-home {
+            position: fixed;
+            left: 0;
+            top: 0;
+        }
+    }
+
+    @include devices {
+        overflow: auto;
+        height: auto;
     }
 }
 
@@ -187,6 +200,11 @@ iframe {
     min-height: 100vh; // fallback
     // stylelint-disable-next-line
     min-height: var(--vh);
+
+    @include devices {
+        width: 100vw;
+        overflow: hidden;
+    }
 }
 
 .c-scrollbar {
@@ -462,5 +480,30 @@ canvas {
 .col {
     @include desktop {
         width: vc(810);
+    }
+}
+
+
+.to-top {
+    position: fixed;
+    right: vc(120);
+    bottom: vc(120);
+    z-index: 10;
+    width: vc(50);
+    height: vc(50);
+    cursor: pointer;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.2s linear;
+
+    &.is-view {
+        opacity: 1;
+        visibility: visible;
+
+    }
+
+    @include devices {
+        right: vc(40);
+        bottom: vc(40);
     }
 }

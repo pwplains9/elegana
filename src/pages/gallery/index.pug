@@ -51,7 +51,6 @@ block content
                         | Заявка отправлена!
                     .text-form
                         | Мы свяжемся с вами в кратчайшие сроки, обсудим детали и договоримся о дате выезда на бесплатный замер
-
     .popup.is-hidden(data-item="1")
         .popup-bg
         .popup-content.is-hidden
@@ -72,7 +71,7 @@ block content
                     </svg>
 
                 .popup-title
-                    | Белая
+                    | 2Белая
                     | современная кухня
                 .popup-number
                     | 18.10.2022
@@ -89,15 +88,16 @@ block content
                     .popup-line
                         .popup-param
                             | Площадь
-                        .popup-value
+                        .popup-value#area
                             | 12,5 м²
                     .popup-line
                         .popup-param
                             | Стоимость от
-                        .popup-value
+                        .popup-value#price
                             | 120 000 ₽
                 .popup-button.js-popup-forms(data-popup="lead-form")
                     | хочу такую же!
+
     .site(data-scroll-container)
 
         include @components/header/header
@@ -147,21 +147,37 @@ block content
                 | Фотогалерея
             .gallery.gallery--portfolio
                 each item, index in dataGallery
-                    .gallery-item.anim-fade.anim-fade--childs.js-popup(data-project=`${index + 1}` data-scroll)
+                    .gallery-item.anim-fade.anim-fade--childs(data-scroll)
                         .gallery-img
                             .slider.slider--1.slider--xs
-                                .slider-item
+                                .slider-item.js-popup(data-project=`${index + 1}`)
                                     img(src=`${baseDir}assets/images/gallery/${index+1}.jpg` alt='')
-                                .slider-item
+                                .slider-item.js-popup(data-project=`${index + 1}`)
                                     img(src=`${baseDir}assets/images/gallery/${index+1}.jpg` alt='')
-                                .slider-item
+                                .slider-item.js-popup(data-project=`${index + 1}`)
                                     img(src=`${baseDir}assets/images/gallery/${index+1}.jpg` alt='')
-                                .slider-item
+                                .slider-item.js-popup(data-project=`${index + 1}`)
                                     img(src=`${baseDir}assets/images/gallery/${index+1}.jpg` alt='')
                         .title-xs
                             !=item.title
                         .text-xs
                             !=item.text
+                        <div class="popup-info" style="display:none;">
+                        <div class="title">Темная брутальная кухня</div>
+                        <div class="date">18.10.2022</div>
+                        <div class="area">12,5 м²</div>
+                        <div class="price">120 000 ₽</div>
+                        <div class="gallery">
+                        <div class="item"><img src="1.jpg" alt=""></div>
+                        <div class="item"><img src="2.jpg" alt=""></div>
+
+                        </div>
+                        </div>
             .load-more
                 | загрузить ещЁ
         include @components/footer/footer
+    .to-top
+        <svg width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="25" cy="25" r="24" fill="#B48C45" stroke="#005563" stroke-width="2"/>
+        <path d="M13.096 30.2632C12.4713 30.1735 11.8331 30.1271 11.1843 30.1271L11.1843 29.8416C18.7344 29.8416 24.8661 23.5495 24.8661 15.7896L25.1293 15.7896C25.1293 23.5495 31.2561 29.8416 38.8159 29.8416L38.8159 30.1271C38.1667 30.1271 37.5281 30.1735 36.9031 30.2632L13.096 30.2632Z" fill="#005563"/>
+        </svg>

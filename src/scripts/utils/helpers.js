@@ -78,6 +78,42 @@ helpers.lockScroll = (state, $element, name) => {
     }
 };
 
+helpers.lockScrollMobile = (state, $element, name) => {
+    if (typeof dataScrollLocks === 'undefined') {
+        dataScrollLocks = new Set();
+    }
+
+    let scrollLocks = dataScrollLocks;
+
+    if (state) {
+        if (typeof name === 'string') {
+            scrollLocks.add(name);
+        }
+
+        bodyScrollLock.disableBodyScroll($element, {
+            reserveScrollBarGap: false,
+        });
+
+        setTimeout(() => {
+            document.documentElement.style.setProperty('--scrollbar-width', `${vars.getScrollbarWidth()}px`);
+            document.documentElement.classList.add('is-lock-scroll');
+        }, 0);
+    } else {
+        if (typeof name === 'string') {
+            scrollLocks.delete(name);
+        }
+
+        bodyScrollLock.enableBodyScroll($element);
+
+        if (!scrollLocks.size) {
+            bodyScrollLock.clearAllBodyScrollLocks();
+
+            document.documentElement.style.setProperty('--scrollbar-width', '0px');
+            document.documentElement.classList.remove('is-lock-scroll');
+        }
+    }
+};
+
 helpers.isScrollLocked = () => {
     return document.documentElement.classList.contains('is-lock-scroll');
 };
@@ -127,5 +163,14 @@ window.addEventListener('resize', () => {
         }
     }, 300);
 });
+
+helpers.isAnimating = (state) => {
+    if (typeof state !== 'undefined') {
+        document.documentElement.classList.toggle('is-animating', state);
+    }
+
+    return document.documentElement.classList.contains('is-animating');
+};
+
 
 export default helpers;
