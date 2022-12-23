@@ -405,9 +405,9 @@
 }
 
 .load-more {
-    margin: 0 auto 110px;
-    padding: 18px 0;
-    width: 312px;
+    margin: 0 auto vc(110);
+    padding: vc(18) 0;
+    width: vc(312);
     border: 1px solid #686868;
     border-radius: 10px;
 
@@ -436,4 +436,8 @@
         font-size: vc(13);
         line-height: vc(16);
     }
+}
+
+body {
+    min-height: vc(111);
 }

@@ -68,6 +68,7 @@
     }
 
     &-number {
+        flex-shrink: 0;
         border: 2px solid $color-brown;
         border-radius: 5px;
         padding: vc(13) vc(18);
@@ -90,7 +91,7 @@
         @include devices {
 
             margin-right: 0;
-            margin-left: vc(-6);
+            margin-left: vc(-8);
             border-width:  1.54377px;
             padding: vc(12) vc(28);
             font-size: vc(13);

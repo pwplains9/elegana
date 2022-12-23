@@ -71,8 +71,11 @@ const init = () => {
         return;
     }
 
-    if(helpers.isMobile) {
-        $('.about-card--first').removeAttr('data-scroll')
+    if(helpers.isDevices) {
+        $('.about-card--first, .furniture-item--color').removeAttr('data-scroll data-scroll-offset');
+
+
+        $('.about-card--first, .furniture-item--color').removeClass('anim-fade');
     }
 
     const isDevices = helpers.isDevices();

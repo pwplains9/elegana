@@ -9,6 +9,10 @@
         @include desktop {
             margin-right: vc(30);
         }
+
+        @include devices {
+            margin: 0 vc(15);
+        }
     }
 
     &-item {
@@ -137,7 +141,6 @@
     }
 
     @include devices {
-        margin-top: vc(19);
-
+        margin: vc(19) vc(-15) 0;
     }
 }
